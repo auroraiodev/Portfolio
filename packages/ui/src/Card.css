@@ -1,0 +1,33 @@
+.ui-card {
+  position: relative;
+  padding: 2.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.ui-card.glass {
+  background: rgba(53, 53, 52, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ui-card.arsenal {
+  background: #0e0e0e;
+  border-top: 2px solid var(--border-gold);
+}
+
+.ui-card:hover {
+  border-color: var(--border-gold);
+}
+
+.ui-card img {
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition-normal);
+}
+
+.ui-card:hover img {
+  transform: scale(1.05);
+}

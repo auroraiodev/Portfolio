@@ -1,0 +1,17 @@
+@import "@repo/ui/theme.css";
+
+/* App-specific global styles can go here */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  transition: background-color 0.5s ease;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
