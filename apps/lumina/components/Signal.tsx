@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Container } from "@repo/ui/Container";
 
 export const Signal = () => {
@@ -30,15 +31,26 @@ export const Signal = () => {
       }}></div>
       
       <Container size="md" style={{ textAlign: "center", position: "relative", zIndex: 10 }}>
-        <h2 className="noto-serif" style={{ fontSize: "clamp(3rem, 8vw, 6rem)", marginBottom: "2rem" }}>Send a Signal</h2>
-        <p className="manrope" style={{ color: "var(--text-secondary)", fontSize: "1.1rem", marginBottom: "4rem", textTransform: "none", letterSpacing: "normal", maxWidth: "600px", margin: "0 auto 4rem auto" }}>
-          I am always open to new expeditions and collaborations. Reach out through the ether.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="noto-serif" style={{ fontSize: "clamp(3rem, 8vw, 6rem)", marginBottom: "2rem" }}>Send a Signal</h2>
+          <p className="manrope" style={{ color: "var(--text-secondary)", fontSize: "1.1rem", marginBottom: "4rem", textTransform: "none", letterSpacing: "normal", maxWidth: "600px", margin: "0 auto 4rem auto" }}>
+            I am always open to new expeditions and collaborations. Reach out through the ether.
+          </p>
+        </motion.div>
         
         <div style={{ display: "flex", justifyContent: "center", gap: "3rem" }}>
-          {channels.map((channel) => (
-            <div 
+          {channels.map((channel, index) => (
+            <motion.div 
               key={channel.label} 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="signal-channel" 
               style={{ cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}
               onClick={() => handleAction(channel.action)}
@@ -61,7 +73,7 @@ export const Signal = () => {
                 </span>
               </div>
               <span className="manrope" style={{ fontSize: "10px", opacity: 0.6 }}>{channel.label}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>

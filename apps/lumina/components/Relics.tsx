@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Container } from "@repo/ui/Container";
 
 const RELICS = [
@@ -27,10 +28,16 @@ export const Relics = () => {
   return (
     <section id="relics" style={{ padding: "10rem 0", backgroundColor: "#0e0e0e", overflow: "hidden" }}>
       <Container size="lg">
-        <div style={{ textAlign: "center", marginBottom: "6rem" }}>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          style={{ textAlign: "center", marginBottom: "6rem" }}
+        >
           <span className="manrope" style={{ color: "var(--accent-secondary)", fontSize: "10px", letterSpacing: "0.5em" }}>MANIFESTED WORKS</span>
           <h2 className="noto-serif" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginTop: "1rem" }}>PROJECT RELICS</h2>
-        </div>
+        </motion.div>
         
         <div style={{ 
           display: "grid", 
@@ -39,9 +46,13 @@ export const Relics = () => {
           alignItems: "start",
           paddingTop: "3rem"
         }}>
-          {RELICS.map((relic) => (
-            <div 
+          {RELICS.map((relic, index) => (
+            <motion.div 
               key={relic.title} 
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               className={`relic-card ${relic.offset ? 'offset-card' : ''}`}
               style={{ cursor: "pointer", position: "relative" }}
             >
@@ -64,7 +75,7 @@ export const Relics = () => {
                   className="relic-img"
                   src={relic.image}
                 />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #131313, transparent, transparent)" }}></div>
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #131313, rgba(19, 19, 19, 0), transparent)" }}></div>
                 <div style={{ position: "absolute", bottom: 0, left: 0, padding: "2.5rem", width: "100%" }}>
                   <h4 className="serif-text" style={{ fontSize: "1.75rem", color: "var(--accent-primary)", marginBottom: "0.75rem" }}>{relic.title}</h4>
                   <p className="manrope" style={{ color: "var(--text-secondary)", fontSize: "0.85rem", textTransform: "none", letterSpacing: "normal", marginBottom: "1.5rem", opacity: 0.8 }}>
@@ -88,7 +99,7 @@ export const Relics = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>

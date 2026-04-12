@@ -59,7 +59,7 @@ export const Navbar = () => {
               textDecoration: "none",
               textShadow: "0 0 8px rgba(233, 193, 118, 0.4)"
             }}>
-              ARCHIVE_033
+              ARCHIVE_01
             </Link>
           </div>
           
@@ -86,7 +86,6 @@ export const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <span className="material-symbols-outlined" style={{ color: "var(--accent-primary)", cursor: "pointer" }}>account_circle</span>
           </div>
         </Container>
       </nav>

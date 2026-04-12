@@ -48,8 +48,8 @@ export const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBomGBhN-w-yWx1rfW3zzJwe79YI71AkHJga3Bdrst13c5E07gWuhf9oY2jVJhvzDicgyWb4guh7VwZY_jZmsyIE3xdPZwmfgQDBhK4m-kvmcn-0JTNtO9TWsf3P4HhrP8qFNB3CPcx1mTc8gzmBIO71seaHP7PVkdklCZzSs8qhdp4cgXNBwtZIIcyUQCgRNOqoi9kdMevy40FfMTAk2weXfMQLBTHwH9Qj0I_VunnY-OWMmFzxsR1TuP4n0B0VszQkAVDjHzBYjQ" alt="Archivist" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1)" }} />
           </div>
           <div>
-            <h4 style={{ color: "var(--accent-primary)", margin: 0, fontFamily: "'Noto Serif', serif" }}>OP_ARCHIVIST</h4>
-            <p style={{ margin: 0, fontSize: "10px", color: "rgba(229, 226, 225, 0.5)", textTransform: "uppercase", letterSpacing: "0.2em" }}>Level 33 Architect</p>
+            <h4 style={{ color: "var(--accent-primary)", margin: 0, fontFamily: "'Noto Serif', serif" }}>PRIME_ARCHIVIST</h4>
+            <p style={{ margin: 0, fontSize: "10px", color: "rgba(229, 226, 225, 0.5)", textTransform: "uppercase", letterSpacing: "0.2em" }}>Prime Architect</p>
           </div>
         </div>
 

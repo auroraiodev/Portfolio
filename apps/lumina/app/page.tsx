@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Button } from "@repo/ui/Button";
 import { Container } from "@repo/ui/Container";
 import { Arsenal } from "../components/Arsenal";
@@ -9,6 +10,22 @@ import { Chronograph } from "../components/Chronograph";
 import { BottomNav } from "../components/BottomNav";
 
 export default function Home() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <main>
       {/* Hero Section */}
@@ -40,40 +57,57 @@ export default function Home() {
           <div className="hero-gradient" style={{ position: "absolute", inset: 0 }}></div>
         </div>
         
-        <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "1200px", padding: "0 1.5rem" }}>
-          <p className="manrope" style={{ color: "var(--accent-secondary)", marginBottom: "0.5rem", fontSize: "12px", letterSpacing: "0.4em" }}>
-            ACCESSING SYSTEM METADATA
-          </p>
-          <h1 className="noto-serif" style={{ 
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "1200px", padding: "0 1.5rem" }}
+        >
+          <motion.p variants={itemVariants} className="manrope" style={{ color: "var(--accent-secondary)", marginBottom: "0.5rem", fontSize: "12px", letterSpacing: "0.4em" }}>
+            ACCESSING SYSTEM METADATA_01
+          </motion.p>
+          <motion.h1 variants={itemVariants} className="noto-serif" style={{ 
             fontSize: "clamp(3.5rem, 15vw, 9rem)", 
             lineHeight: "0.85", 
             letterSpacing: "-0.05em",
             textShadow: "0 20px 40px rgba(0,0,0,0.4)"
           }}>
             DEMIS <br/> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>RINCON</span>
-          </h1>
-          <div style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></div>
-          <p className="manrope" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
+          </motion.h1>
+          <motion.div variants={itemVariants} style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
+          <motion.p variants={itemVariants} className="manrope" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
             Front End Developer <span style={{ color: "var(--accent-primary)" }}>•</span> Digital Architect
-          </p>
-          <div>
+          </motion.p>
+          <motion.div variants={itemVariants}>
             <Button variant="primary" style={{ padding: "1.25rem 3.5rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
               VIEW MY WORK
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
-        <div style={{ position: "absolute", bottom: "100px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", opacity: 0.4 }} className="hidden-mobile">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          transition={{ delay: 2, duration: 1 }}
+          style={{ position: "absolute", bottom: "100px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }} 
+          className="hidden-mobile"
+        >
           <span className="manrope" style={{ fontSize: "10px" }}>Descend into the archive</span>
           <span className="material-symbols-outlined" style={{ animation: "bounce 2s infinite" }}>expand_more</span>
-        </div>
+        </motion.div>
       </header>
 
       {/* The Archivist's Vision */}
       <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "var(--bg-primary)" }}>
         <Container size="lg">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "center" }}>
-            <div style={{ position: "relative" }}>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              style={{ position: "relative" }}
+            >
               <div style={{ aspectRatio: "4/5", overflow: "hidden", border: "1px solid rgba(154, 143, 128, 0.2)", position: "relative" }}>
                 <img 
                   alt="Demis Rincon Portrait" 
@@ -85,9 +119,15 @@ export default function Home() {
               </div>
               <div style={{ position: "absolute", bottom: "-32px", right: "-32px", width: "192px", height: "192px", borderRight: "1px solid rgba(233, 193, 118, 0.4)", borderBottom: "1px solid rgba(233, 193, 118, 0.4)" }}></div>
               <div style={{ position: "absolute", top: "-16px", left: "-16px", transform: "rotate(90deg)", transformOrigin: "top left", fontSize: "10px", color: "var(--accent-secondary)", opacity: 0.5, letterSpacing: "0.2em" }} className="manrope">Bio_Identifier_01</div>
-            </div>
+            </motion.div>
             
-            <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
+            >
               <div>
                 <span className="manrope" style={{ color: "var(--accent-secondary)", fontSize: "10px", letterSpacing: "0.3em" }}>IDENTIFICATION</span>
                 <h3 className="noto-serif" style={{ fontSize: "2.5rem", marginTop: "0.5rem" }}>THE ARCHIVIST'S VISION</h3>
@@ -100,7 +140,7 @@ export default function Home() {
                   "Innovation is the bridge between what was lost and what is yet to be discovered."
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Container>
       </section>
