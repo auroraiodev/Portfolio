@@ -6,51 +6,83 @@
     "level": "Prime",
     "location": "Global / Remote",
     "bio": "Crafting digital experiences where ancient elegance meets modern performance. My approach to software engineering is rooted in the philosophy of the 'Ethereal Archive'—building interfaces that feel timeless, immersive, and functional. With every project, I aim to weave a narrative through code, ensuring that the technology never overshadows the story.",
-    "quote": "Innovation is the bridge between what was lost and what is yet to be discovered."
+    "quote": "Innovation is the bridge between what was lost and what is yet to be discovered.",
+    "resume_url": "https://demisrincon.com/resume.pdf"
+  },
+  "education": {
+    "degree": "Telematics Engineering",
+    "institution": "Pontificia Universidad Católica Madre y Maestra",
+    "period": "2013 - 2018"
   },
   "technical_coordinates": [
     {
       "category": "FRONTEND",
       "icon": "terminal",
-      "tools": ["React / Next.js", "TypeScript", "Tailwind CSS", "Three.js / WebGL", "Flutter"]
+      "tools": ["React / Next.js", "TypeScript", "Tailwind CSS", "Three.js / WebGL", "Flutter", "Redux"]
     },
     {
       "category": "BACKEND",
       "icon": "database",
-      "tools": ["Node.js / Express", "PostgreSQL / Prisma", "GraphQL / Apollo", "AWS / Docker", "Supabase"]
+      "tools": ["Node.js / Express", "PostgreSQL / Prisma", "GraphQL / Apollo", "AWS / Docker", "Supabase", "NestJS"]
     },
     {
-      "category": "LANGUAGES",
-      "icon": "code",
-      "tools": ["JavaScript", "Kotlin", "Java", "Dart", "C++"]
+      "category": "QA & DEVOPS",
+      "icon": "settings_suggest",
+      "tools": ["Jest / Cypress", "Newman / Postman", "Docker", "CI/CD Pipelines", "Git / GitHub Actions"]
+    }
+  ],
+  "chronicle": [
+    {
+      "company": "Travelport",
+      "role": "Software Engineer II",
+      "period": "2022 - PRESENT",
+      "description": "Leading the development of mission-critical travel commerce micro-frontends. Architecting scalable React components and optimizing performance for global distribution systems."
+    },
+    {
+      "company": "Coca-Cola",
+      "role": "Software Engineer",
+      "period": "2021 - 2022",
+      "description": "Engineered B2B commerce solutions and internal logistics applications. Focused on React/Node.js integration and cross-platform mobile development."
+    },
+    {
+      "company": "Sancrisoft",
+      "role": "Software Engineer",
+      "period": "2020 - 2021",
+      "description": "Developed web and mobile applications for various clients. Specialized in Flutter for cross-platform mobile and React for high-performance web."
+    },
+    {
+      "company": "TCS (Tata Consultancy)",
+      "role": "System Engineer",
+      "period": "2018 - 2020",
+      "description": "Modernizing legacy systems and implementing cloud-based architectures. Full-stack development with a focus on enterprise scalability."
     }
   ],
   "relics": [
     {
       "id": "relic-01",
-      "title": "Smart Point Cloud",
-      "description": "Autonomous 3D mapping interface for complex architectural archives using PointCloud data and WebGL.",
+      "title": "Celebrity Cruises App",
+      "description": "Modern cross-platform mobile experience for one of the world's premier cruise lines, featuring real-time booking and guest interactions.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACe9d5WZHywtetJjRYmvIXzyzTIBDHJgq2zTCqmxxMHH_XReQ_B4Fz65StKvVnmx64IRkoV-e68OIecMd3QEapFI9HEnZyMQlJyaMCa0pnVp7UitXxSg6aWH5jrWM3pywabAw5ZdVAxTwdpiWOHiE3LKDCLkSB1qDG-yrrnUcWWtxj0exS09Srec0jSKHyG_LEB0FIgwxB1yYUTEAcMdxCK-skhtRaL2Ek0494Sov-QAGg5HGgyFOWmELDw5zwcsdzVlSR7HiWAjY",
       "year": "2024",
-      "tech": ["Next.js", "Three.js", "TypeScript"],
+      "tech": ["Flutter", "Dart", "Firebase"],
       "pinned": true
     },
     {
       "id": "relic-02",
-      "title": "PMG Web Page",
-      "description": "Editorial web experience for a luxury digital production house, focusing on fluid transitions and premium aesthetics.",
+      "title": "COOP By Ryder",
+      "description": "Leading commercial vehicle sharing platform. Architected the frontend for seamless truck rental and fleet management operations.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCur_oADTX3GVLi9bB8_9650Jg-BZvZiRvQjvgg3cdakVZ7IJrj7GnATQ1tbMf1M98KAYbBz1FW9Ik_41RfyRnf6RGjDiaPUf68i_0w8AOQWI-YX3hcX-Wi5LtTZWn1jpGKLnrUyVmJVeI8yKDKi0V2_iTUp35aiKK6OyucafqZGz7ZwDwaYHihqhT2sucRWHa9eAnmXxHqNDgC9CbSMNwB7QjjQh-WlwRoFAeibmeLoFiIN_VtnyY8Kx4BQdxjCAbi3aC0Gz8oovY",
       "year": "2023",
-      "tech": ["GSAP", "React", "Framer Motion"],
+      "tech": ["Next.js", "React", "Redux"],
       "pinned": true
     },
     {
       "id": "relic-03",
-      "title": "Neural Engine",
-      "description": "Interactive dashboard for monitoring real-time generative data streams and AI performance metadata.",
+      "title": "Smart Point Cloud",
+      "description": "Autonomous 3D mapping interface for complex architectural archives using PointCloud data and WebGL.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3O6wAscCXtco09U4YCVelBdePlp0L4I9l8wioj55DraSN2aPd00efuGK3lCDoTrwufitx5pvd332OhCv-8qx7tPx7CRHUkoNkMVTXHGo870aJhKp84kzcV05dpgySvqjuRW-YrhbXC6dbex2cLTdGHt32pHpCBd09nnF-dgVpbXCmQpQgYvQz9Kp77cr12rZC7grYGksoPvyYHwSTESF3XzLdRVqAA4ljfILdXKsOGuSAyyxfukKyr3XmqXXJAqsbRZcaBp8QYyM",
       "year": "2024",
-      "tech": ["Node.js", "React", "TailwindCSS"],
+      "tech": ["Next.js", "Three.js", "TypeScript"],
       "pinned": true
     },
     {
@@ -64,11 +96,11 @@
     },
     {
       "id": "relic-05",
-      "title": "Aurora Framework",
-      "description": "Design system and UI library for archival-inspired web applications.",
+      "title": "Neural Engine",
+      "description": "Interactive dashboard for monitoring real-time generative data streams and AI performance metadata.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAVkBFrGx8B87HVHfz3AWK0wGwEJxhJvoFZ9GiPk1dk9nOfnWPbF3x-Q7Xu6sH0_GMMhWKFfV4LGr0X8e-FQMXXbft2BQ51Tz08vBQaaUq3yH2EHlX4sRu_hK5TNsuznYyeJVLiB1LAUbeJ0EftuN4pmn0wL6OceywS6w6Iie0KRkYkO8f5Y0p2o2bE1AjfGIz137YxRc7jHxH9ua8qb8UEAen7b71gwVe3vkclDH4R7AXLBnDuxq8GlligT1zz1NhnlMHNgwHv8AE",
-      "year": "2025",
-      "tech": ["TailwindCSS", "TypeScript", "React"],
+      "year": "2024",
+      "tech": ["Node.js", "React", "TailwindCSS"],
       "pinned": false
     }
   ],

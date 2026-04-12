@@ -5,6 +5,7 @@ import { Button } from "@repo/ui/Button";
 import { Container } from "@repo/ui/Container";
 import { Arsenal } from "../components/Arsenal";
 import { Relics } from "../components/Relics";
+import { Chronicle } from "../components/Chronicle";
 import { Signal } from "../components/Signal";
 import { Chronograph } from "../components/Chronograph";
 import { BottomNav } from "../components/BottomNav";
@@ -85,9 +86,12 @@ export default function Home() {
           <motion.p variants={itemVariants} className="manrope" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
             {profile.title.toUpperCase()} <span style={{ color: "var(--accent-primary)" }}>•</span> DIGITAL ARCHITECT
           </motion.p>
-          <motion.div variants={itemVariants}>
-            <Button variant="primary" style={{ padding: "1.25rem 3.5rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
+          <motion.div variants={itemVariants} style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
+            <Button variant="primary" style={{ padding: "1.25rem 3rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
               VIEW MY WORK
+            </Button>
+            <Button variant="outline" style={{ padding: "1.25rem 3rem" }} onClick={() => window.open(profile.resume_url, "_blank")}>
+              DOWNLOAD CV
             </Button>
           </motion.div>
         </motion.div>
@@ -152,6 +156,7 @@ export default function Home() {
         </Container>
       </section>
 
+      <Chronicle />
       <Arsenal />
       <Chronograph />
       <Relics />
