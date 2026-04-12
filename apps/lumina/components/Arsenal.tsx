@@ -3,26 +3,11 @@
 import { motion } from "framer-motion";
 import { Card } from "@repo/ui/Card";
 import { Container } from "@repo/ui/Container";
-
-const ARSENAL = [
-  {
-    category: "FRONTEND",
-    icon: "terminal",
-    tools: ["React / Next.js", "TypeScript", "Tailwind CSS", "Three.js / WebGL"]
-  },
-  {
-    category: "BACKEND",
-    icon: "database",
-    tools: ["Node.js / Express", "PostgreSQL / Prisma", "GraphQL / Apollo", "AWS Infrastructure"]
-  },
-  {
-    category: "DESIGN",
-    icon: "architecture",
-    tools: ["Figma / Design Systems", "UI/UX Architecture", "Motion Design", "Adobe Creative Suite"]
-  }
-];
+import data from "../data/portfolio.json";
 
 export const Arsenal = () => {
+  const { technical_coordinates } = data;
+
   return (
     <section id="arsenal" style={{ padding: "12rem 0 8rem 0", backgroundColor: "#0e0e0e", position: "relative" }}>
       <Container size="lg">
@@ -41,7 +26,7 @@ export const Arsenal = () => {
         </motion.div>
         
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem" }}>
-          {ARSENAL.map((item, index) => (
+          {technical_coordinates.map((item, index) => (
             <motion.div
               key={item.category}
               initial={{ opacity: 0, y: 30 }}

@@ -8,8 +8,11 @@ import { Relics } from "../components/Relics";
 import { Signal } from "../components/Signal";
 import { Chronograph } from "../components/Chronograph";
 import { BottomNav } from "../components/BottomNav";
+import data from "../data/portfolio.json";
 
 export default function Home() {
+  const { profile } = data;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -23,7 +26,11 @@ export default function Home() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8 } 
+    }
   };
 
   return (
@@ -72,11 +79,11 @@ export default function Home() {
             letterSpacing: "-0.05em",
             textShadow: "0 20px 40px rgba(0,0,0,0.4)"
           }}>
-            DEMIS <br/> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>RINCON</span>
+            {profile.name.split(" ")[0]} <br/> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>{profile.name.split(" ")[1]}</span>
           </motion.h1>
           <motion.div variants={itemVariants} style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
           <motion.p variants={itemVariants} className="manrope" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
-            Front End Developer <span style={{ color: "var(--accent-primary)" }}>•</span> Digital Architect
+            {profile.title.toUpperCase()} <span style={{ color: "var(--accent-primary)" }}>•</span> DIGITAL ARCHITECT
           </motion.p>
           <motion.div variants={itemVariants}>
             <Button variant="primary" style={{ padding: "1.25rem 3.5rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
@@ -110,7 +117,7 @@ export default function Home() {
             >
               <div style={{ aspectRatio: "4/5", overflow: "hidden", border: "1px solid rgba(154, 143, 128, 0.2)", position: "relative" }}>
                 <img 
-                  alt="Demis Rincon Portrait" 
+                  alt={profile.name}
                   style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) contrast(1.1)", transition: "all 1s ease" } as any}
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP1Gqzm08H75RI-KSR8k6gdDNcPp7vIn-mvLzsnHgkcvRXQGaNHfPrpSi88Z_MsKRXKZOL5_2219xW-N4ii5NV2ORPpTzYCeuQ-9t7Nla35J2zKTmS60ygF0Pwy1wQOjUSV5khX3AEFB-OofdvGSBhop8tYR4n7MSIMskf6s9tn4jeeSNhkKcJSiyqQOBR132_pdzwIFD_gq-7cw_z-ivWo1Jj-EFF6xbIWFbkIIGiISdx1tS-zBtlCX4JGcgm-n6Tacm44S_qGVE"
                   onMouseOver={(e) => (e.currentTarget.style.filter = "grayscale(0) contrast(1)")}
@@ -133,11 +140,11 @@ export default function Home() {
                 <h3 className="noto-serif" style={{ fontSize: "2.5rem", marginTop: "0.5rem" }}>THE ARCHIVIST'S VISION</h3>
               </div>
               <p className="manrope drop-cap" style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: "1.8", textTransform: "none", letterSpacing: "normal" }}>
-                Crafting digital experiences where ancient elegance meets modern performance. My approach to frontend development is rooted in the philosophy of the "Ethereal Archive"—building interfaces that feel timeless, immersive, and functional. With every project, I aim to weave a narrative through code, ensuring that the technology never overshadows the story.
+                {profile.bio}
               </p>
               <div style={{ padding: "1.5rem", backgroundColor: "var(--bg-surface)", borderLeft: "4px solid var(--accent-primary)" }}>
                 <p className="manrope" style={{ color: "var(--text-primary)", fontStyle: "italic", textTransform: "none", letterSpacing: "normal" }}>
-                  "Innovation is the bridge between what was lost and what is yet to be discovered."
+                  "{profile.quote}"
                 </p>
               </div>
             </motion.div>

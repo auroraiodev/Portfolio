@@ -1,0 +1,80 @@
+{
+  "profile": {
+    "name": "DEMIS RINCON",
+    "title": "Software Engineer",
+    "status": "PRIME_ARCHIVIST",
+    "level": "Prime",
+    "location": "Global / Remote",
+    "bio": "Crafting digital experiences where ancient elegance meets modern performance. My approach to software engineering is rooted in the philosophy of the 'Ethereal Archive'—building interfaces that feel timeless, immersive, and functional. With every project, I aim to weave a narrative through code, ensuring that the technology never overshadows the story.",
+    "quote": "Innovation is the bridge between what was lost and what is yet to be discovered."
+  },
+  "technical_coordinates": [
+    {
+      "category": "FRONTEND",
+      "icon": "terminal",
+      "tools": ["React / Next.js", "TypeScript", "Tailwind CSS", "Three.js / WebGL", "Flutter"]
+    },
+    {
+      "category": "BACKEND",
+      "icon": "database",
+      "tools": ["Node.js / Express", "PostgreSQL / Prisma", "GraphQL / Apollo", "AWS / Docker", "Supabase"]
+    },
+    {
+      "category": "LANGUAGES",
+      "icon": "code",
+      "tools": ["JavaScript", "Kotlin", "Java", "Dart", "C++"]
+    }
+  ],
+  "relics": [
+    {
+      "id": "relic-01",
+      "title": "Smart Point Cloud",
+      "description": "Autonomous 3D mapping interface for complex architectural archives using PointCloud data and WebGL.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACe9d5WZHywtetJjRYmvIXzyzTIBDHJgq2zTCqmxxMHH_XReQ_B4Fz65StKvVnmx64IRkoV-e68OIecMd3QEapFI9HEnZyMQlJyaMCa0pnVp7UitXxSg6aWH5jrWM3pywabAw5ZdVAxTwdpiWOHiE3LKDCLkSB1qDG-yrrnUcWWtxj0exS09Srec0jSKHyG_LEB0FIgwxB1yYUTEAcMdxCK-skhtRaL2Ek0494Sov-QAGg5HGgyFOWmELDw5zwcsdzVlSR7HiWAjY",
+      "year": "2024",
+      "tech": ["Next.js", "Three.js", "TypeScript"],
+      "pinned": true
+    },
+    {
+      "id": "relic-02",
+      "title": "PMG Web Page",
+      "description": "Editorial web experience for a luxury digital production house, focusing on fluid transitions and premium aesthetics.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCur_oADTX3GVLi9bB8_9650Jg-BZvZiRvQjvgg3cdakVZ7IJrj7GnATQ1tbMf1M98KAYbBz1FW9Ik_41RfyRnf6RGjDiaPUf68i_0w8AOQWI-YX3hcX-Wi5LtTZWn1jpGKLnrUyVmJVeI8yKDKi0V2_iTUp35aiKK6OyucafqZGz7ZwDwaYHihqhT2sucRWHa9eAnmXxHqNDgC9CbSMNwB7QjjQh-WlwRoFAeibmeLoFiIN_VtnyY8Kx4BQdxjCAbi3aC0Gz8oovY",
+      "year": "2023",
+      "tech": ["GSAP", "React", "Framer Motion"],
+      "pinned": true
+    },
+    {
+      "id": "relic-03",
+      "title": "Neural Engine",
+      "description": "Interactive dashboard for monitoring real-time generative data streams and AI performance metadata.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3O6wAscCXtco09U4YCVelBdePlp0L4I9l8wioj55DraSN2aPd00efuGK3lCDoTrwufitx5pvd332OhCv-8qx7tPx7CRHUkoNkMVTXHGo870aJhKp84kzcV05dpgySvqjuRW-YrhbXC6dbex2cLTdGHt32pHpCBd09nnF-dgVpbXCmQpQgYvQz9Kp77cr12rZC7grYGksoPvyYHwSTESF3XzLdRVqAA4ljfILdXKsOGuSAyyxfukKyr3XmqXXJAqsbRZcaBp8QYyM",
+      "year": "2024",
+      "tech": ["Node.js", "React", "TailwindCSS"],
+      "pinned": true
+    },
+    {
+      "id": "relic-04",
+      "title": "Hydra Marketplace",
+      "description": "A high-performance TCG marketplace optimized for speed and cellular connectivity.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBomGBhN-w-yWx1rfW3zzJwe79YI71AkHJga3Bdrst13c5E07gWuhf9oY2jVJhvzDicgyWb4guh7VwZY_jZmsyIE3xdPZwmfgQDBhK4m-kvmcn-0JTNtO9TWsf3P4HhrP8qFNB3CPcx1mTc8gzmBIO71seaHP7PVkdklCZzSs8qhdp4cgXNBwtZIIcyUQCgRNOqoi9kdMevy40FfMTAk2weXfMQLBTHwH9Qj0I_VunnY-OWMmFzxsR1TuP4n0B0VszQkAVDjHzBYjQ",
+      "year": "2024",
+      "tech": ["Next.js", "Bun", "PostgreSQL"],
+      "pinned": false
+    },
+    {
+      "id": "relic-05",
+      "title": "Aurora Framework",
+      "description": "Design system and UI library for archival-inspired web applications.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAVkBFrGx8B87HVHfz3AWK0wGwEJxhJvoFZ9GiPk1dk9nOfnWPbF3x-Q7Xu6sH0_GMMhWKFfV4LGr0X8e-FQMXXbft2BQ51Tz08vBQaaUq3yH2EHlX4sRu_hK5TNsuznYyeJVLiB1LAUbeJ0EftuN4pmn0wL6OceywS6w6Iie0KRkYkO8f5Y0p2o2bE1AjfGIz137YxRc7jHxH9ua8qb8UEAen7b71gwVe3vkclDH4R7AXLBnDuxq8GlligT1zz1NhnlMHNgwHv8AE",
+      "year": "2025",
+      "tech": ["TailwindCSS", "TypeScript", "React"],
+      "pinned": false
+    }
+  ],
+  "contact": {
+    "email": "darmfma@gmail.com",
+    "github": "https://github.com/DemisRincon",
+    "linkedin": "https://www.linkedin.com/in/demisrincon/"
+  }
+}
