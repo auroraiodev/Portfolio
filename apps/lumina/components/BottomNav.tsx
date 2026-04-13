@@ -6,9 +6,9 @@ export const BottomNav = () => {
   const [activeSegment, setActiveSegment] = useState("home");
 
   const navItems = [
-    { id: "home", label: "CHRONICLE", icon: "auto_stories" },
-    { id: "arsenal", label: "ARSENAL", icon: "swords" },
-    { id: "relics", label: "RELICS", icon: "account_tree" },
+    { id: "chronicle", label: "CHRONICLE", icon: "auto_stories" },
+    { id: "arsenal", label: "ARSENAL", icon: "terminal" },
+    { id: "relics", label: "RELICS", icon: "inventory_2" },
     { id: "signal", label: "SIGNAL", icon: "sensors" },
   ];
 

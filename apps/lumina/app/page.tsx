@@ -69,12 +69,13 @@ export default function Home() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          className="hero-content"
           style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "1200px", padding: "0 1.5rem" }}
         >
-          <motion.p variants={itemVariants} className="manrope" style={{ color: "var(--accent-secondary)", marginBottom: "0.5rem", fontSize: "12px", letterSpacing: "0.4em" }}>
+          <motion.p variants={itemVariants} className="manrope hero-meta" style={{ color: "var(--accent-secondary)", marginBottom: "0.5rem", fontSize: "12px", letterSpacing: "0.4em" }}>
             ACCESSING SYSTEM METADATA_01
           </motion.p>
-          <motion.h1 variants={itemVariants} className="noto-serif" style={{ 
+          <motion.h1 variants={itemVariants} className="noto-serif hero-title" style={{ 
             fontSize: "clamp(3.5rem, 15vw, 9rem)", 
             lineHeight: "0.85", 
             letterSpacing: "-0.05em",
@@ -82,15 +83,15 @@ export default function Home() {
           }}>
             {profile.name.split(" ")[0]} <br/> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>{profile.name.split(" ")[1]}</span>
           </motion.h1>
-          <motion.div variants={itemVariants} style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
-          <motion.p variants={itemVariants} className="manrope" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
+          <motion.div variants={itemVariants} className="hero-divider" style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
+          <motion.p variants={itemVariants} className="manrope hero-subtitle" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
             {profile.title.toUpperCase()} <span style={{ color: "var(--accent-primary)" }}>•</span> DIGITAL ARCHITECT
           </motion.p>
-          <motion.div variants={itemVariants} style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
-            <Button variant="primary" style={{ padding: "1.25rem 3rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
+          <motion.div variants={itemVariants} className="hero-actions" style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
+            <Button variant="primary" className="hero-btn" style={{ padding: "1.25rem 3rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
               VIEW MY WORK
             </Button>
-            <Button variant="outline" style={{ padding: "1.25rem 3rem" }} onClick={() => window.open(profile.resume_url, "_blank")}>
+            <Button variant="outline" className="hero-btn" style={{ padding: "1.25rem 3rem" }} onClick={() => window.open(profile.resume_url, "_blank")}>
               DOWNLOAD CV
             </Button>
           </motion.div>
@@ -111,7 +112,7 @@ export default function Home() {
       {/* The Archivist's Vision */}
       <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "var(--bg-primary)" }}>
         <Container size="lg">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "5rem", alignItems: "center" }}>
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -168,6 +169,34 @@ export default function Home() {
           0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
           40% {transform: translateY(-10px);}
           60% {transform: translateY(-5px);}
+        }
+
+        @media (max-width: 768px) {
+          main {
+            padding-bottom: 80px;
+          }
+          .hero-title {
+            line-height: 1.0 !important;
+            margin-bottom: 0.5rem;
+          }
+          .hero-subtitle {
+            letter-spacing: 0.2em !important;
+            line-height: 1.5;
+            padding: 0 1rem;
+          }
+          .hero-divider {
+            margin: 1rem auto !important;
+          }
+          .hero-actions {
+            flex-direction: column;
+            gap: 1rem !important;
+            width: 100%;
+            padding: 0 2rem;
+          }
+          .hero-actions :global(.hero-btn) {
+            width: 100%;
+            padding: 1rem 2rem !important;
+          }
         }
       `}</style>
     </main>

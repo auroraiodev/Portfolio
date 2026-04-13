@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const navItems = [
-    { label: "CHRONICLE", href: "/#home" },
+    { label: "CHRONICLE", href: "/#chronicle" },
     { label: "ARSENAL", href: "/#arsenal" },
     { label: "RELICS", href: "/#relics" },
     { label: "SIGNAL", href: "/#signal" },
