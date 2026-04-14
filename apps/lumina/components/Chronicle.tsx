@@ -1,20 +1,31 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Container } from "@repo/ui/Container";
+import { useRef } from "react";
 import data from "../data/portfolio.json";
 
 export const Chronicle = () => {
   const { chronicle } = data;
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
-    <section id="chronicle" style={{ padding: "10rem 0", backgroundColor: "var(--bg-primary)", position: "relative", overflow: "hidden" }}>
+    <section id="chronicle" ref={containerRef} style={{ padding: "10rem 0", backgroundColor: "var(--bg-primary)", position: "relative", overflow: "hidden" }}>
       <Container size="lg">
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5 }}
           style={{ textAlign: "center", marginBottom: "8rem" }}
         >
           <span className="manrope" style={{ color: "var(--accent-secondary)", fontSize: "10px", letterSpacing: "0.5em" }}>OPERATIONAL TIMELINE</span>
@@ -22,16 +33,31 @@ export const Chronicle = () => {
         </motion.div>
 
         <div style={{ position: "relative", maxWidth: "900px", margin: "0 auto" }}>
-          {/* Central Line */}
+          {/* Central Line - Animated */}
+          <motion.div 
+            style={{ 
+              position: "absolute", 
+              left: "50%", 
+              top: 0, 
+              bottom: 0, 
+              width: "1px", 
+              backgroundColor: "rgba(233, 193, 118, 0.4)",
+              transform: "translateX(-50%)",
+              scaleY,
+              transformOrigin: "top"
+            }} 
+            className="hidden-mobile"
+          />
+          {/* Static Background Line */}
           <div style={{ 
             position: "absolute", 
             left: "50%", 
             top: 0, 
             bottom: 0, 
             width: "1px", 
-            backgroundColor: "rgba(233, 193, 118, 0.2)",
+            backgroundColor: "rgba(233, 193, 118, 0.05)",
             transform: "translateX(-50%)"
-          }} className="hidden-mobile"></div>
+          }} className="hidden-mobile" />
 
           {chronicle.map((item, index) => (
             <motion.div 

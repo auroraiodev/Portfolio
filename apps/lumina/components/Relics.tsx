@@ -114,7 +114,26 @@ export const Relics = () => {
                             </span>
                           ))}
                         </div>
-                        <h4 className="serif-text" style={{ fontSize: "1.75rem", color: "white", marginBottom: "0.75rem" }}>{relic.title}</h4>
+                        <motion.h4 
+                          className="serif-text" 
+                          animate={isActive ? { 
+                            backgroundImage: [
+                              "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.4) 50%, #fff 100%)",
+                              "linear-gradient(90deg, #fff 0%, rgba(255,255,255,1) 50%, #fff 100%)",
+                              "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.4) 50%, #fff 100%)"
+                            ] 
+                          } : {}}
+                          transition={{ duration: 4, repeat: Infinity }}
+                          style={{ 
+                            fontSize: "1.75rem", 
+                            color: "white", 
+                            marginBottom: "0.75rem",
+                            WebkitBackgroundClip: "text",
+                            backgroundSize: "200% 100%"
+                          }}
+                        >
+                          {relic.title}
+                        </motion.h4>
                         <p className="manrope" style={{ color: "var(--text-secondary)", fontSize: "0.85rem", opacity: isActive ? 0.8 : 0, maxWidth: "260px", lineHeight: "1.6" }}>
                           {relic.description}
                         </p>

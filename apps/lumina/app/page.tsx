@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Button } from "@repo/ui/Button";
 import { Container } from "@repo/ui/Container";
 import { Arsenal } from "../components/Arsenal";
@@ -9,33 +9,47 @@ import { Chronicle } from "../components/Chronicle";
 import { Signal } from "../components/Signal";
 import { Chronograph } from "../components/Chronograph";
 import { BottomNav } from "../components/BottomNav";
+import { AuraBackground } from "../components/AuraBackground";
 import data from "../data/portfolio.json";
 
 export default function Home() {
   const { profile } = data;
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
+        delayChildren: 0.5
       }
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(10px)", scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 }
+      filter: "blur(0px)",
+      scale: 1,
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
+
+  const revealVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.98, filter: "blur(8px)" },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      filter: "blur(0px)",
+      transition: { duration: 1.5, ease: "easeOut" }
     }
   };
 
   return (
-    <main>
+    <main style={{ position: "relative", scrollBehavior: "smooth" }}>
+      <AuraBackground />
       {/* Hero Section */}
       <header id="home" style={{
         position: "relative",
@@ -47,7 +61,7 @@ export default function Home() {
         justifyContent: "center",
         textAlign: "center",
         overflow: "hidden",
-        backgroundColor: "#131313"
+        backgroundColor: "transparent"
       }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           <img
@@ -79,8 +93,29 @@ export default function Home() {
             fontSize: "clamp(3.5rem, 15vw, 9rem)",
             lineHeight: "0.85",
             letterSpacing: "-0.05em",
-            textShadow: "0 20px 40px rgba(0,0,0,0.4)"
+            textShadow: "0 20px 40px rgba(0,0,0,0.4)",
+            position: "relative"
           }}>
+            {/* The Magic Prism */}
+            <motion.div 
+               animate={{ 
+                 opacity: [0.3, 0.6, 0.3],
+                 rotate: [0, 360],
+               }}
+               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+               style={{ 
+                 position: "absolute", 
+                 top: "50%", 
+                 left: "50%", 
+                 transform: "translate(-50%, -50%)",
+                 width: "150%", 
+                 height: "150%", 
+                 background: "conic-gradient(from 0deg, transparent, rgba(233, 193, 118, 0.3), transparent, rgba(154, 143, 128, 0.3), transparent)",
+                 pointerEvents: "none",
+                 zIndex: -1,
+                 filter: "blur(60px)"
+               }}
+            />
             {profile.name.split(" ")[0]} <br /> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>{profile.name.split(" ")[1]}</span>
           </motion.h1>
           <motion.div variants={itemVariants} className="hero-divider" style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
@@ -127,7 +162,7 @@ export default function Home() {
       </header>
 
       {/* The Archivist's Vision */}
-      <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "var(--bg-primary)" }}>
+      <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "transparent" }}>
         <Container size="lg">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "5rem", alignItems: "center" }}>
             <motion.div
@@ -181,7 +216,10 @@ export default function Home() {
       <Signal />
       <BottomNav />
 
-      <style jsx>{`
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
         @media (max-width: 768px) {
           main {
             padding-bottom: 80px;

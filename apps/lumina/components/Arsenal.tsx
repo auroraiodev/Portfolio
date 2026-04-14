@@ -9,7 +9,7 @@ export const Arsenal = () => {
   const { technical_coordinates } = data;
 
   return (
-    <section id="arsenal" style={{ padding: "12rem 0 8rem 0", backgroundColor: "#0e0e0e", position: "relative" }}>
+    <section id="arsenal" style={{ padding: "12rem 0 8rem 0", backgroundColor: "transparent", position: "relative" }}>
       <Container size="lg">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -29,25 +29,44 @@ export const Arsenal = () => {
           {technical_coordinates.map((item, index) => (
             <motion.div
               key={item.category}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9, rotate: -2, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -10, scale: 1.02 }}
             >
               <Card className="arsenal">
+                {/* Glow Background Overlay */}
+                <motion.div 
+                  className="card-glow"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  style={{ 
+                    position: "absolute", 
+                    inset: 0, 
+                    zIndex: 0, 
+                    background: "radial-gradient(circle at center, rgba(233, 193, 118, 0.12) 0%, transparent 70%)",
+                    pointerEvents: "none"
+                  }}
+                />
+
                 <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 2, background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(233, 193, 118, 0.03) 3px, transparent 4px)", backgroundSize: "100% 4px" }}></div>
                 <div style={{ position: "absolute", top: 0, right: 0, padding: "1rem", opacity: 0.1 }}>
                   <span className="material-symbols-outlined" style={{ fontSize: "4rem", color: "var(--accent-primary)" }}>
                     {item.icon}
                   </span>
                 </div>
-                <span className="manrope" style={{ color: "var(--accent-primary)", fontWeight: "bold", display: "block", marginBottom: "1.5rem" }}>
+                <span className="manrope" style={{ color: "var(--accent-primary)", fontWeight: "bold", display: "block", marginBottom: "1.5rem", position: "relative", zIndex: 3 }}>
                   {item.category}
                 </span>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  {item.tools.map((tool) => (
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem", position: "relative", zIndex: 3 }}>
+                  {item.tools.map((tool, toolIndex) => (
                     <li key={tool} style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontFamily: "'Manrope', sans-serif", fontSize: "1.1rem", color: "var(--text-secondary)" }}>
-                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--accent-secondary)" }}></span>
+                      <motion.span 
+                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: (toolIndex * 0.2) % 2 }}
+                        style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--accent-secondary)", boxShadow: "0 0 10px var(--accent-secondary)" }} 
+                      />
                       {tool}
                     </li>
                   ))}
