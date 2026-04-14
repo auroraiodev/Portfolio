@@ -17,7 +17,7 @@ export const Signal = () => {
   return (
     <section id="signal" style={{ 
       padding: "15rem 0 10rem 0", 
-      backgroundColor: "#0e0e0e", 
+      backgroundColor: "transparent", 
       position: "relative",
       overflow: "hidden"
     }}>

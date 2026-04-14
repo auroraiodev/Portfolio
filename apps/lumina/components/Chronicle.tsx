@@ -19,7 +19,7 @@ export const Chronicle = () => {
   });
 
   return (
-    <section id="chronicle" ref={containerRef} style={{ padding: "10rem 0", backgroundColor: "var(--bg-primary)", position: "relative", overflow: "hidden" }}>
+    <section id="chronicle" ref={containerRef} style={{ padding: "10rem 0 5rem 0", backgroundColor: "transparent", position: "relative", overflow: "hidden" }}>
       <Container size="lg">
         <motion.div 
           initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}

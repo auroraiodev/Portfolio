@@ -9,7 +9,7 @@ export const Arsenal = () => {
   const { technical_coordinates } = data;
 
   return (
-    <section id="arsenal" style={{ padding: "12rem 0 8rem 0", backgroundColor: "transparent", position: "relative" }}>
+    <section id="arsenal" style={{ padding: "5rem 0 8rem 0", backgroundColor: "transparent", position: "relative" }}>
       <Container size="lg">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}

@@ -14,7 +14,7 @@ export const Relics = () => {
   const prevRelic = () => setActiveIndex((prev) => (prev - 1 + relics.length) % relics.length);
 
   return (
-    <section id="relics" style={{ padding: "10rem 0", backgroundColor: "#0e0e0e", overflow: "hidden" }}>
+    <section id="relics" style={{ padding: "10rem 0", backgroundColor: "transparent", overflow: "hidden" }}>
       <Container size="xl">
         <motion.div 
           initial={{ opacity: 0 }}
