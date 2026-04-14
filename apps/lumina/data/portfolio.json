@@ -1,106 +1,124 @@
 {
   "profile": {
     "name": "DEMIS RINCON",
-    "title": "Software Engineer",
+    "title": "Principal Software Engineer",
     "status": "PRIME_ARCHIVIST",
     "level": "Prime",
-    "location": "Global / Remote",
-    "bio": "Crafting digital experiences where ancient elegance meets modern performance. My approach to software engineering is rooted in the philosophy of the 'Ethereal Archive'—building interfaces that feel timeless, immersive, and functional. With every project, I aim to weave a narrative through code, ensuring that the technology never overshadows the story.",
+    "location": "Colima, MX / Remote",
+    "bio": "Crafting digital experiences where ancient elegance meets modern performance. With over six years of expertise, I lead the development of immersive web and mobile applications, weaving narratives through code. From architecting AI legal assistants to volunteering as a JavaScript instructor at Bright Coders Academy, I aim to build interfaces that are as functional as they are timeless.",
     "quote": "Innovation is the bridge between what was lost and what is yet to be discovered.",
-    "resume_url": "https://demisrincon.com/resume.pdf"
+    "resume_url": "/resume.pdf"
   },
-  "education": {
-    "degree": "Telematics Engineering",
-    "institution": "Pontificia Universidad Católica Madre y Maestra",
-    "period": "2013 - 2018"
-  },
+  "education": [
+    {
+      "degree": "Bachelor's Degree in Telematics Engineering",
+      "institution": "Universidad de Colima",
+      "period": "2019"
+    },
+    {
+      "degree": "React Native Developer Course",
+      "institution": "Bright Coders Academy",
+      "period": "2021"
+    },
+    {
+      "degree": "JavaScript MERN Developer Course",
+      "institution": "Dev Education",
+      "period": "2020"
+    }
+  ],
   "technical_coordinates": [
     {
       "category": "FRONTEND",
       "icon": "terminal",
-      "tools": ["React / Next.js", "TypeScript", "Tailwind CSS", "Three.js / WebGL", "Flutter", "Redux"]
+      "tools": ["React / Next.js", "TypeScript", "React Native / Expo", "Tailwind CSS / Nativewind", "Zustand / Redux", "Three.js / WebGL", "Flutter"]
     },
     {
       "category": "BACKEND",
       "icon": "database",
-      "tools": ["Node.js / Express", "PostgreSQL / Prisma", "GraphQL / Apollo", "AWS / Docker", "Supabase", "NestJS"]
+      "tools": ["Node.js / NestJS", "PostgreSQL / Prisma", "GraphQL / REST", "Azure / AWS", "Docker", "Express.js", "MongoDB"]
     },
     {
-      "category": "QA & DEVOPS",
+      "category": "TEST & DEVOPS",
       "icon": "settings_suggest",
-      "tools": ["Jest / Cypress", "Newman / Postman", "Docker", "CI/CD Pipelines", "Git / GitHub Actions"]
+      "tools": ["Jest / Testing Library", "Nightwatch / Cypress", "Cucumber / BDD", "Postman / Newman", "GitHub Actions / CI/CD", "Git / Jira"]
     }
   ],
   "chronicle": [
     {
-      "company": "Travelport",
-      "role": "Software Engineer II",
-      "period": "2022 - PRESENT",
-      "description": "Leading the development of mission-critical travel commerce micro-frontends. Architecting scalable React components and optimizing performance for global distribution systems."
+      "company": "VTWO",
+      "role": "Principal Software Engineer",
+      "period": "2025 - PRESENT",
+      "description": "Leading development for Regulix (B2B construction ops) and Litera (AI legal assistant). Architecting React Native mobile apps with Zustand, tailoring PostgreSQL/Prisma backends, and integrating Azure AI services."
     },
     {
-      "company": "Coca-Cola",
-      "role": "Software Engineer",
-      "period": "2021 - 2022",
-      "description": "Engineered B2B commerce solutions and internal logistics applications. Focused on React/Node.js integration and cross-platform mobile development."
+      "company": "Travelport",
+      "role": "Software Engineer II",
+      "period": "2022 - 2025",
+      "description": "Maintained global travel commerce applications. Led automated contract testing for 150+ APIs using Postman/Newman and architected E2E testing pipelines with Nightwatch and GitHub Actions."
     },
     {
       "company": "Sancrisoft",
       "role": "Software Engineer",
-      "period": "2020 - 2021",
-      "description": "Developed web and mobile applications for various clients. Specialized in Flutter for cross-platform mobile and React for high-performance web."
+      "period": "2021 - 2022",
+      "description": "Engineered diverse cross-platform solutions including truck rental management (COOP) and cruise administration systems (Celebrity Cruises). Specialized in complex UI animations and AWS integration."
+    },
+    {
+      "company": "Coca-Cola",
+      "role": "Software Engineer",
+      "period": "2019 - 2021",
+      "description": "Modernized internal logistics legacy software and developed the enterprise-wide design system. Built high-performance components and APIs serving confidential global data."
     },
     {
       "company": "TCS (Tata Consultancy)",
       "role": "System Engineer",
-      "period": "2018 - 2020",
-      "description": "Modernizing legacy systems and implementing cloud-based architectures. Full-stack development with a focus on enterprise scalability."
+      "period": "2018 - 2019",
+      "description": "Architected sophisticated React components for enterprise registration modules, optimizing complex state management and registration flows."
     }
   ],
   "relics": [
     {
       "id": "relic-01",
-      "title": "Celebrity Cruises App",
-      "description": "Modern cross-platform mobile experience for one of the world's premier cruise lines, featuring real-time booking and guest interactions.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACe9d5WZHywtetJjRYmvIXzyzTIBDHJgq2zTCqmxxMHH_XReQ_B4Fz65StKvVnmx64IRkoV-e68OIecMd3QEapFI9HEnZyMQlJyaMCa0pnVp7UitXxSg6aWH5jrWM3pywabAw5ZdVAxTwdpiWOHiE3LKDCLkSB1qDG-yrrnUcWWtxj0exS09Srec0jSKHyG_LEB0FIgwxB1yYUTEAcMdxCK-skhtRaL2Ek0494Sov-QAGg5HGgyFOWmELDw5zwcsdzVlSR7HiWAjY",
-      "year": "2024",
-      "tech": ["Flutter", "Dart", "Firebase"],
+      "title": "Litera AI",
+      "description": "An AI-powered legal assistant revolutionizing legal research and documentation through LLM integration and seamless mobile experiences.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBomGBhN-w-yWx1rfW3zzJwe79YI71AkHJga3Bdrst13c5E07gWuhf9oY2jVJhvzDicgyWb4guh7VwZY_jZmsyIE3xdPZwmfgQDBhK4m-kvmcn-0JTNtO9TWsf3P4HhrP8qFNB3CPcx1mTc8gzmBIO71seaHP7PVkdklCZzSs8qhdp4cgXNBwtZIIcyUQCgRNOqoi9kdMevy40FfMTAk2weXfMQLBTHwH9Qj0I_VunnY-OWMmFzxsR1TuP4n0B0VszQkAVDjHzBYjQ",
+      "year": "2025",
+      "tech": ["Next.js", "Azure AI", "Zustand"],
       "pinned": true
     },
     {
       "id": "relic-02",
-      "title": "COOP By Ryder",
-      "description": "Leading commercial vehicle sharing platform. Architected the frontend for seamless truck rental and fleet management operations.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCur_oADTX3GVLi9bB8_9650Jg-BZvZiRvQjvgg3cdakVZ7IJrj7GnATQ1tbMf1M98KAYbBz1FW9Ik_41RfyRnf6RGjDiaPUf68i_0w8AOQWI-YX3hcX-Wi5LtTZWn1jpGKLnrUyVmJVeI8yKDKi0V2_iTUp35aiKK6OyucafqZGz7ZwDwaYHihqhT2sucRWHa9eAnmXxHqNDgC9CbSMNwB7QjjQh-WlwRoFAeibmeLoFiIN_VtnyY8Kx4BQdxjCAbi3aC0Gz8oovY",
-      "year": "2023",
-      "tech": ["Next.js", "React", "Redux"],
+      "title": "Celebrity Cruises",
+      "description": "Immersive mobile application for premier cruise travel, featuring real-time booking, interactive brochures, and luxury guest services.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACe9d5WZHywtetJjRYmvIXzyzTIBDHJgq2zTCqmxxMHH_XReQ_B4Fz65StKvVnmx64IRkoV-e68OIecMd3QEapFI9HEnZyMQlJyaMCa0pnVp7UitXxSg6aWH5jrWM3pywabAw5ZdVAxTwdpiWOHiE3LKDCLkSB1qDG-yrrnUcWWtxj0exS09Srec0jSKHyG_LEB0FIgwxB1yYUTEAcMdxCK-skhtRaL2Ek0494Sov-QAGg5HGgyFOWmELDw5zwcsdzVlSR7HiWAjY",
+      "year": "2024",
+      "tech": ["React Native", "AWS", "Framer Motion"],
       "pinned": true
     },
     {
       "id": "relic-03",
-      "title": "Smart Point Cloud",
-      "description": "Autonomous 3D mapping interface for complex architectural archives using PointCloud data and WebGL.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3O6wAscCXtco09U4YCVelBdePlp0L4I9l8wioj55DraSN2aPd00efuGK3lCDoTrwufitx5pvd332OhCv-8qx7tPx7CRHUkoNkMVTXHGo870aJhKp84kzcV05dpgySvqjuRW-YrhbXC6dbex2cLTdGHt32pHpCBd09nnF-dgVpbXCmQpQgYvQz9Kp77cr12rZC7grYGksoPvyYHwSTESF3XzLdRVqAA4ljfILdXKsOGuSAyyxfukKyr3XmqXXJAqsbRZcaBp8QYyM",
-      "year": "2024",
-      "tech": ["Next.js", "Three.js", "TypeScript"],
+      "title": "COOP By Ryder",
+      "description": "Award-winning commercial vehicle sharing platform. Architected the mobile and web interface for seamless fleet management operations.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCur_oADTX3GVLi9bB8_9650Jg-BZvZiRvQjvgg3cdakVZ7IJrj7GnATQ1tbMf1M98KAYbBz1FW9Ik_41RfyRnf6RGjDiaPUf68i_0w8AOQWI-YX3hcX-Wi5LtTZWn1jpGKLnrUyVmJVeI8yKDKi0V2_iTUp35aiKK6OyucafqZGz7ZwDwaYHihqhT2sucRWHa9eAnmXxHqNDgC9CbSMNwB7QjjQh-WlwRoFAeibmeLoFiIN_VtnyY8Kx4BQdxjCAbi3aC0Gz8oovY",
+      "year": "2023",
+      "tech": ["React Native", "Next.js", "Redux"],
       "pinned": true
     },
     {
       "id": "relic-04",
-      "title": "Hydra Marketplace",
-      "description": "A high-performance TCG marketplace optimized for speed and cellular connectivity.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBomGBhN-w-yWx1rfW3zzJwe79YI71AkHJga3Bdrst13c5E07gWuhf9oY2jVJhvzDicgyWb4guh7VwZY_jZmsyIE3xdPZwmfgQDBhK4m-kvmcn-0JTNtO9TWsf3P4HhrP8qFNB3CPcx1mTc8gzmBIO71seaHP7PVkdklCZzSs8qhdp4cgXNBwtZIIcyUQCgRNOqoi9kdMevy40FfMTAk2weXfMQLBTHwH9Qj0I_VunnY-OWMmFzxsR1TuP4n0B0VszQkAVDjHzBYjQ",
-      "year": "2024",
-      "tech": ["Next.js", "Bun", "PostgreSQL"],
-      "pinned": false
+      "title": "Regulix",
+      "description": "A comprehensive business operations platform tailored for U.S. construction companies, optimizing workflow and regulatory compliance.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3O6wAscCXtco09U4YCVelBdePlp0L4I9l8wioj55DraSN2aPd00efuGK3lCDoTrwufitx5pvd332OhCv-8qx7tPx7CRHUkoNkMVTXHGo870aJhKp84kzcV05dpgySvqjuRW-YrhbXC6dbex2cLTdGHt32pHpCBd09nnF-dgVpbXCmQpQgYvQz9Kp77cr12rZC7grYGksoPvyYHwSTESF3XzLdRVqAA4ljfILdXKsOGuSAyyxfukKyr3XmqXXJAqsbRZcaBp8QYyM",
+      "year": "2025",
+      "tech": ["NestJS", "PostgreSQL", "React"],
+      "pinned": true
     },
     {
       "id": "relic-05",
-      "title": "Neural Engine",
-      "description": "Interactive dashboard for monitoring real-time generative data streams and AI performance metadata.",
+      "title": "Hydra Marketplace",
+      "description": "High-performance TCG marketplace optimized for speed and cellular connectivity, serving a global community of collectors.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAVkBFrGx8B87HVHfz3AWK0wGwEJxhJvoFZ9GiPk1dk9nOfnWPbF3x-Q7Xu6sH0_GMMhWKFfV4LGr0X8e-FQMXXbft2BQ51Tz08vBQaaUq3yH2EHlX4sRu_hK5TNsuznYyeJVLiB1LAUbeJ0EftuN4pmn0wL6OceywS6w6Iie0KRkYkO8f5Y0p2o2bE1AjfGIz137YxRc7jHxH9ua8qb8UEAen7b71gwVe3vkclDH4R7AXLBnDuxq8GlligT1zz1NhnlMHNgwHv8AE",
       "year": "2024",
-      "tech": ["Node.js", "React", "TailwindCSS"],
+      "tech": ["Next.js", "Bun", "Postgres"],
       "pinned": false
     }
   ],

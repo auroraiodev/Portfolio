@@ -27,35 +27,35 @@ export default function Home() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8 } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 }
     }
   };
 
   return (
     <main>
       {/* Hero Section */}
-      <header id="home" style={{ 
-        position: "relative", 
-        minHeight: "100vh", 
-        width: "100%", 
-        display: "flex", 
-        flexDirection: "column", 
-        alignItems: "center", 
-        justifyContent: "center", 
-        textAlign: "center", 
+      <header id="home" style={{
+        position: "relative",
+        minHeight: "100vh",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
         overflow: "hidden",
         backgroundColor: "#131313"
       }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img 
-            alt="Cinematic digital architect" 
-            style={{ 
-              width: "100%", 
-              height: "100%", 
-              objectFit: "cover", 
+          <img
+            alt="Cinematic digital architect"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
               opacity: 0.4,
               filter: "grayscale(1) contrast(1.2)",
               mixBlendMode: "luminosity"
@@ -64,8 +64,8 @@ export default function Home() {
           />
           <div className="hero-gradient" style={{ position: "absolute", inset: 0 }}></div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -75,17 +75,17 @@ export default function Home() {
           <motion.p variants={itemVariants} className="manrope hero-meta" style={{ color: "var(--accent-secondary)", marginBottom: "0.5rem", fontSize: "12px", letterSpacing: "0.4em" }}>
             ACCESSING SYSTEM METADATA_01
           </motion.p>
-          <motion.h1 variants={itemVariants} className="noto-serif hero-title" style={{ 
-            fontSize: "clamp(3.5rem, 15vw, 9rem)", 
-            lineHeight: "0.85", 
+          <motion.h1 variants={itemVariants} className="noto-serif hero-title" style={{
+            fontSize: "clamp(3.5rem, 15vw, 9rem)",
+            lineHeight: "0.85",
             letterSpacing: "-0.05em",
             textShadow: "0 20px 40px rgba(0,0,0,0.4)"
           }}>
-            {profile.name.split(" ")[0]} <br/> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>{profile.name.split(" ")[1]}</span>
+            {profile.name.split(" ")[0]} <br /> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>{profile.name.split(" ")[1]}</span>
           </motion.h1>
           <motion.div variants={itemVariants} className="hero-divider" style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
           <motion.p variants={itemVariants} className="manrope hero-subtitle" style={{ color: "var(--text-secondary)", fontSize: "clamp(0.8rem, 2vw, 1.2rem)", letterSpacing: "0.6em", opacity: 0.8, marginBottom: "2rem" }}>
-            {profile.title.toUpperCase()} <span style={{ color: "var(--accent-primary)" }}>•</span> DIGITAL ARCHITECT
+            <span style={{ color: "var(--accent-primary)" }}>•</span>  {profile.title.toUpperCase()} <span style={{ color: "var(--accent-primary)" }}>•</span>
           </motion.p>
           <motion.div variants={itemVariants} className="hero-actions" style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
             <Button variant="primary" className="hero-btn" style={{ padding: "1.25rem 3rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
@@ -96,16 +96,33 @@ export default function Home() {
             </Button>
           </motion.div>
         </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
+
+        <motion.div
+          initial={{ opacity: 0, x: "-50%" }}
+          animate={{ opacity: 0.4, x: "-50%" }}
           transition={{ delay: 2, duration: 1 }}
-          style={{ position: "absolute", bottom: "100px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }} 
+          style={{ 
+            position: "absolute", 
+            bottom: "40px", 
+            left: "50%", 
+            display: "flex", 
+            flexDirection: "column", 
+            alignItems: "center", 
+            gap: "0.5rem", 
+            cursor: "pointer",
+            zIndex: 10
+          }}
           className="hidden-mobile"
+          onClick={() => document.getElementById("vision")?.scrollIntoView({ behavior: "smooth" })}
         >
-          <span className="manrope" style={{ fontSize: "10px" }}>Descend into the archive</span>
-          <span className="material-symbols-outlined" style={{ animation: "bounce 2s infinite" }}>expand_more</span>
+          <span className="manrope" style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase" }}>Descend into the archive</span>
+          <motion.span 
+            className="material-symbols-outlined"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            expand_more
+          </motion.span>
         </motion.div>
       </header>
 
@@ -113,7 +130,7 @@ export default function Home() {
       <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "var(--bg-primary)" }}>
         <Container size="lg">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "5rem", alignItems: "center" }}>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -121,10 +138,10 @@ export default function Home() {
               style={{ position: "relative" }}
             >
               <div style={{ aspectRatio: "4/5", overflow: "hidden", border: "1px solid rgba(154, 143, 128, 0.2)", position: "relative" }}>
-                <img 
+                <img
                   alt={profile.name}
                   style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) contrast(1.1)", transition: "all 1s ease" } as any}
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP1Gqzm08H75RI-KSR8k6gdDNcPp7vIn-mvLzsnHgkcvRXQGaNHfPrpSi88Z_MsKRXKZOL5_2219xW-N4ii5NV2ORPpTzYCeuQ-9t7Nla35J2zKTmS60ygF0Pwy1wQOjUSV5khX3AEFB-OofdvGSBhop8tYR4n7MSIMskf6s9tn4jeeSNhkKcJSiyqQOBR132_pdzwIFD_gq-7cw_z-ivWo1Jj-EFF6xbIWFbkIIGiISdx1tS-zBtlCX4JGcgm-n6Tacm44S_qGVE"
+                  src="/photo.jpeg"
                   onMouseOver={(e) => (e.currentTarget.style.filter = "grayscale(0) contrast(1)")}
                   onMouseOut={(e) => (e.currentTarget.style.filter = "grayscale(1) contrast(1.1)")}
                 />
@@ -132,8 +149,8 @@ export default function Home() {
               <div style={{ position: "absolute", bottom: "-32px", right: "-32px", width: "192px", height: "192px", borderRight: "1px solid rgba(233, 193, 118, 0.4)", borderBottom: "1px solid rgba(233, 193, 118, 0.4)" }}></div>
               <div style={{ position: "absolute", top: "-16px", left: "-16px", transform: "rotate(90deg)", transformOrigin: "top left", fontSize: "10px", color: "var(--accent-secondary)", opacity: 0.5, letterSpacing: "0.2em" }} className="manrope">Bio_Identifier_01</div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -165,12 +182,6 @@ export default function Home() {
       <BottomNav />
 
       <style jsx>{`
-        @keyframes bounce {
-          0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-          40% {transform: translateY(-10px);}
-          60% {transform: translateY(-5px);}
-        }
-
         @media (max-width: 768px) {
           main {
             padding-bottom: 80px;

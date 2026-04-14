@@ -1,0 +1,100 @@
+Demis Rincon
++52 312 109 1992 | darmfma@gmail.com | www.linkedin.com/in/demisrincon/
+
+Profile
+I am an enthusiastic Software Developer with over six years of experience in building dynamic web
+applications. I have led significant projects across various industries and am proficient in React.js, React
+Native, Next.js, Node.js, Express.js, MySQL and MongoDB. In my free time, I enjoy playing video games,
+Magic: The Gathering (MTG), teaching “Introduction to cybersecurity” at Universidad Vizcaya de las
+Americas or volunteering as a JavaScript instructor at Bright Coders Academy.
+
+Experience
+SOFTWARE ENGINEER | VTWO | JUN 2025 – PRESENT
+Worked on Regulix, a business operations platform for U.S. construction companies, and Litera, a legaltech application powered by LLMs. In Regulix, I served as Principal Engineer for the React Native mobile
+app, building features using React Native, Zustand, Context API and custom hooks, styled with Tailwind
+CSS and Nativewind, and aligned with Figma designs. The system also included React, Next.js, and
+NestJS. I performed unit testing with Jest, managed data with PostgreSQL and Prisma, and used Docker
+and AWS for deployment.
+In Litera, I contributed to the frontend and mobile development of AI legal assistant app, also as Principal
+Engineer for the React Native version. I built reusable components with React and styled Tailwind CSS,
+and integrated microservices. I used Zustand and custom hooks for state management, used services of
+Azure as OAuth, text to speech and speech to text, used Jest for testing, Docker for environment
+consistency, and Jira and Slack for project coordination.
+
+SOFTWARE ENGINEER | TRAVELPORT | JUN 2022 – FEB 2025
+Maintained the main application created with React, Redux, Redux toolkit, Context API, TailwindCSS,
+Typescript, using REST as communication protocol and performing the unit testing using Jest for the
+front end. I lead a project to develop automated contract testing for approximately 150 APIs using
+Postman, Newman, and GitHub Actions for CI/CD, utilizing Azure DevOps to run and maintain
+environment pipelines. I participated in the development of E2E testing for the main application using
+Nightwatch, Cucumber and Jenkins. Also was part of the development of E2E test of a minor internal
+app using Cypress and GitHub Actions. Mentored junior developers in full stack development, as well as
+SDET tasks, and the use of Chrome and React DevTools, providing guidance and fostering their growth in
+these areas.
+
+SOFTWARE ENGINEER | SANCRISOFT | JUN 2021 - JUN 2022
+Worked on diverse client projects using React.js, Redux, Context API, Next.js, Express.js, React Native,
+AWS S3, AWS EC2, Styled Components, Material UI, MySQL, Graphql, MongoDB, and Typescript. I
+Developed five different cross-browser applications, including data capture for Oculus, cruise
+administration systems for Xennial Digital, Celebrity Cruises, complex web pages for PMG Advertising
+Agency, and COOP truck rental management systems. Led the animation development on one of these
+projects.
+
+SOFTWARE ENGINEER | COCA-COLA | JUN 2019 - JUN 2021
+Developed and upgraded approximately ten internal applications managing confidential data via REST
+APIs. Also involved in the full design and implementation of the main design system of the enterprise
+
+based on their existent branding, I improved legacy software, and created reusable components using
+Next.js, React.js, SASS, Node, Express, Redux, Typescript.
+
+SOFTWARE ENGINEER | TATA CONSULTANCY SERVICES | DEC 2018 - JUL 2019
+Developed multiple sophisticated React components with Redux and JavaScript for efficient state
+management, specifically tailored for H hotels' employee registration module.
+
+Education
+REACT NATIVE DEVELOPER COURSE | 2021 | BRIGHT CODERS ACADEMY
+JAVASCRIPT MERN DEVELOPER COURSE | 2020 | DEV EDUCATION
+BACHELOR'S DEGREE IN TELEMATICS ENGINEERING | 2019 | UNIVERSIDAD DE COLIMA
+
+Frameworks & Skills
+· Typescript / JavaScript
+· React.js / Next.js / React Native
+· Redux/ Context /Redux toolkit
+· Node.js / Express.js
+· MongoDB / MySQL
+· REST/Graphql
+· a11y /i18n
+· E2E testing: Cucumber/Nightwatch/Cypress
+· Unit testing: Jest/React Testing Library
+· Contract testing: Postman/Newman
+· GitHub Actions/Jenkins
+· TailwindCSS/Styled components
+
+· Material UI/Fluent UI
+· Docker
+· Deployment to stores
+· Project ownership
+· Conflict management
+· Problem-solving
+· I am willing to learn and teach.
+· Agile methodology.
+· Adaptability
+· Teamwork
+· AWS S3 /AWS EC2
+· Basic Azure
+
+Public Mobile Apps I have participated in.
+· Celebrity Cruises, Celebrity Brochure (React Native) https://apps.apple.com/us/app/celebritybrochure/id1403498484
+· COOP By Ryder Google Play (React Native):
+https://play.google.com/store/apps/details?id=com.ryder.coop&hl=es
+· COOP By Ryder App Store (React Native): https://apps.apple.com/mx/app/coop-by-ryder/id1476769173
+
+Public Apps I have participated in.
+· Litera AI: https://www.litera.com/
+· PMG Web App: https://www.pmg.com/
+· COOP by Ryder Web App: https://www.coop.com/
+· Xennial Digital Website: https://www.xennialdigital.com/
+· Celebrity Cruises web application: https://www.celebritycruises.com/
+· Personal porfolio Next.js, React.js, Graphql, SEO: https://demisrincon.com/
+
+
