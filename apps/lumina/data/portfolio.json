@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "DEMIS RINCON",
-    "title": "Principal Software Engineer",
+    "title": "Software Engineer",
     "status": "PRIME_ARCHIVIST",
     "level": "Prime",
     "location": "Colima, MX / Remote",
@@ -30,17 +30,40 @@
     {
       "category": "FRONTEND",
       "icon": "terminal",
-      "tools": ["React / Next.js", "TypeScript", "React Native / Expo", "Tailwind CSS / Nativewind", "Zustand / Redux", "Three.js / WebGL", "Flutter"]
+      "tools": [
+        "React / Next.js",
+        "TypeScript",
+        "React Native / Expo",
+        "Tailwind CSS / Nativewind",
+        "Zustand / Redux",
+        "Three.js / WebGL",
+        "Flutter"
+      ]
     },
     {
       "category": "BACKEND",
       "icon": "database",
-      "tools": ["Node.js / NestJS", "PostgreSQL / Prisma", "GraphQL / REST", "Azure / AWS", "Docker", "Express.js", "MongoDB"]
+      "tools": [
+        "Node.js / NestJS",
+        "PostgreSQL / Prisma",
+        "GraphQL / REST",
+        "Azure / AWS",
+        "Docker",
+        "Express.js",
+        "MongoDB"
+      ]
     },
     {
       "category": "TEST & DEVOPS",
       "icon": "settings_suggest",
-      "tools": ["Jest / Testing Library", "Nightwatch / Cypress", "Cucumber / BDD", "Postman / Newman", "GitHub Actions / CI/CD", "Git / Jira"]
+      "tools": [
+        "Jest / Testing Library",
+        "Nightwatch / Cypress",
+        "Cucumber / BDD",
+        "Postman / Newman",
+        "GitHub Actions / CI/CD",
+        "Git / Jira"
+      ]
     }
   ],
   "chronicle": [
@@ -82,7 +105,11 @@
       "description": "An AI-powered legal assistant revolutionizing legal research and documentation through LLM integration and seamless mobile experiences.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBomGBhN-w-yWx1rfW3zzJwe79YI71AkHJga3Bdrst13c5E07gWuhf9oY2jVJhvzDicgyWb4guh7VwZY_jZmsyIE3xdPZwmfgQDBhK4m-kvmcn-0JTNtO9TWsf3P4HhrP8qFNB3CPcx1mTc8gzmBIO71seaHP7PVkdklCZzSs8qhdp4cgXNBwtZIIcyUQCgRNOqoi9kdMevy40FfMTAk2weXfMQLBTHwH9Qj0I_VunnY-OWMmFzxsR1TuP4n0B0VszQkAVDjHzBYjQ",
       "year": "2025",
-      "tech": ["Next.js", "Azure AI", "Zustand"],
+      "tech": [
+        "Next.js",
+        "Azure AI",
+        "Zustand"
+      ],
       "pinned": true
     },
     {
@@ -91,7 +118,11 @@
       "description": "Immersive mobile application for premier cruise travel, featuring real-time booking, interactive brochures, and luxury guest services.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACe9d5WZHywtetJjRYmvIXzyzTIBDHJgq2zTCqmxxMHH_XReQ_B4Fz65StKvVnmx64IRkoV-e68OIecMd3QEapFI9HEnZyMQlJyaMCa0pnVp7UitXxSg6aWH5jrWM3pywabAw5ZdVAxTwdpiWOHiE3LKDCLkSB1qDG-yrrnUcWWtxj0exS09Srec0jSKHyG_LEB0FIgwxB1yYUTEAcMdxCK-skhtRaL2Ek0494Sov-QAGg5HGgyFOWmELDw5zwcsdzVlSR7HiWAjY",
       "year": "2024",
-      "tech": ["React Native", "AWS", "Framer Motion"],
+      "tech": [
+        "React Native",
+        "AWS",
+        "Framer Motion"
+      ],
       "pinned": true
     },
     {
@@ -100,7 +131,11 @@
       "description": "Award-winning commercial vehicle sharing platform. Architected the mobile and web interface for seamless fleet management operations.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCur_oADTX3GVLi9bB8_9650Jg-BZvZiRvQjvgg3cdakVZ7IJrj7GnATQ1tbMf1M98KAYbBz1FW9Ik_41RfyRnf6RGjDiaPUf68i_0w8AOQWI-YX3hcX-Wi5LtTZWn1jpGKLnrUyVmJVeI8yKDKi0V2_iTUp35aiKK6OyucafqZGz7ZwDwaYHihqhT2sucRWHa9eAnmXxHqNDgC9CbSMNwB7QjjQh-WlwRoFAeibmeLoFiIN_VtnyY8Kx4BQdxjCAbi3aC0Gz8oovY",
       "year": "2023",
-      "tech": ["React Native", "Next.js", "Redux"],
+      "tech": [
+        "React Native",
+        "Next.js",
+        "Redux"
+      ],
       "pinned": true
     },
     {
@@ -109,7 +144,11 @@
       "description": "A comprehensive business operations platform tailored for U.S. construction companies, optimizing workflow and regulatory compliance.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3O6wAscCXtco09U4YCVelBdePlp0L4I9l8wioj55DraSN2aPd00efuGK3lCDoTrwufitx5pvd332OhCv-8qx7tPx7CRHUkoNkMVTXHGo870aJhKp84kzcV05dpgySvqjuRW-YrhbXC6dbex2cLTdGHt32pHpCBd09nnF-dgVpbXCmQpQgYvQz9Kp77cr12rZC7grYGksoPvyYHwSTESF3XzLdRVqAA4ljfILdXKsOGuSAyyxfukKyr3XmqXXJAqsbRZcaBp8QYyM",
       "year": "2025",
-      "tech": ["NestJS", "PostgreSQL", "React"],
+      "tech": [
+        "NestJS",
+        "PostgreSQL",
+        "React"
+      ],
       "pinned": true
     },
     {
@@ -118,7 +157,11 @@
       "description": "High-performance TCG marketplace optimized for speed and cellular connectivity, serving a global community of collectors.",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAVkBFrGx8B87HVHfz3AWK0wGwEJxhJvoFZ9GiPk1dk9nOfnWPbF3x-Q7Xu6sH0_GMMhWKFfV4LGr0X8e-FQMXXbft2BQ51Tz08vBQaaUq3yH2EHlX4sRu_hK5TNsuznYyeJVLiB1LAUbeJ0EftuN4pmn0wL6OceywS6w6Iie0KRkYkO8f5Y0p2o2bE1AjfGIz137YxRc7jHxH9ua8qb8UEAen7b71gwVe3vkclDH4R7AXLBnDuxq8GlligT1zz1NhnlMHNgwHv8AE",
       "year": "2024",
-      "tech": ["Next.js", "Bun", "Postgres"],
+      "tech": [
+        "Next.js",
+        "Bun",
+        "Postgres"
+      ],
       "pinned": false
     }
   ],
