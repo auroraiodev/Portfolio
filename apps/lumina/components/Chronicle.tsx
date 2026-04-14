@@ -85,14 +85,15 @@ export const Chronicle = () => {
       <style jsx>{`
         @media (max-width: 768px) {
           .chronicle-row {
-            justify-content: flex-start !important;
+            justify-content: center !important;
+            margin-bottom: 4rem !important;
           }
           .chronicle-content {
             width: 100% !important;
-            text-align: left !important;
-            padding: 0 1rem !important;
-            border-left: 1px solid rgba(233, 193, 118, 0.2);
-            margin-left: 1rem;
+            text-align: center !important;
+            padding: 0 1.5rem !important;
+            border-left: none !important;
+            margin-left: 0 !important;
           }
         }
       `}</style>

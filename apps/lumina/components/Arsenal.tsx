@@ -57,6 +57,29 @@ export const Arsenal = () => {
           ))}
         </div>
       </Container>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          #arsenal {
+            padding: 8rem 0 4rem 0 !important;
+          }
+          #arsenal .Container > div:first-child {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            justify-content: center !important;
+            gap: 1.5rem !important;
+          }
+          .arsenal {
+            text-align: center !important;
+          }
+          .arsenal ul {
+            align-items: center !important;
+          }
+          #arsenal div[style*="width: 128px"] {
+            display: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

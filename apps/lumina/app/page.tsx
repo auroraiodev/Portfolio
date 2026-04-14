@@ -178,11 +178,13 @@ export default function Home() {
           .hero-title {
             line-height: 1.0 !important;
             margin-bottom: 0.5rem;
+            text-align: center;
           }
           .hero-subtitle {
-            letter-spacing: 0.2em !important;
+            letter-spacing: 0.2rem !important;
             line-height: 1.5;
             padding: 0 1rem;
+            text-align: center;
           }
           .hero-divider {
             margin: 1rem auto !important;
@@ -192,10 +194,23 @@ export default function Home() {
             gap: 1rem !important;
             width: 100%;
             padding: 0 2rem;
+            align-items: center;
           }
           .hero-actions :global(.hero-btn) {
             width: 100%;
+            max-width: 300px;
             padding: 1rem 2rem !important;
+          }
+          #vision {
+            padding: 5rem 1.5rem !important;
+          }
+          #vision .Container > div {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+            text-align: center !important;
+          }
+          #vision div[style*="flex-direction: column"] {
+            align-items: center !important;
           }
         }
       `}</style>

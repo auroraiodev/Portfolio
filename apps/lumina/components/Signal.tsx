@@ -43,7 +43,7 @@ export const Signal = () => {
           </p>
         </motion.div>
         
-        <div style={{ display: "flex", justifyContent: "center", gap: "3rem" }}>
+        <div className="signal-channels" style={{ display: "flex", justifyContent: "center", gap: "3rem" }}>
           {channels.map((channel, index) => (
             <motion.div 
               key={channel.label} 
@@ -86,6 +86,18 @@ export const Signal = () => {
         }
         .signal-channel:hover span {
           opacity: 1;
+        }
+        @media (max-width: 768px) {
+          #signal {
+            padding: 8rem 0 6rem 0 !important;
+          }
+          .signal-channels {
+            gap: 1.5rem !important;
+          }
+          .signal-icon {
+            width: 48px !important;
+            height: 48px !important;
+          }
         }
       `}</style>
     </section>
