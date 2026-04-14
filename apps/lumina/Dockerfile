@@ -4,16 +4,20 @@ WORKDIR /app
 
 # Stage 1: Pruner
 FROM base AS pruner
-# turbo prune requires nodejs to run
-RUN apt-get update && apt-get install -y nodejs
+# turbo prune requires a modern version of nodejs (16+)
+RUN apt-get update && apt-get install -y curl
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+RUN apt-get install -y nodejs
 RUN bun add -g turbo
 COPY . .
 RUN turbo prune lumina --docker
 
 # Stage 2: Builder
 FROM base AS builder
-# Some build steps may require nodejs (e.g. plugins or scripts)
-RUN apt-get update && apt-get install -y nodejs
+# Ensure nodejs 20 is available for the build process
+RUN apt-get update && apt-get install -y curl
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+RUN apt-get install -y nodejs
 WORKDIR /app
 
 # Copy pruned package.json files and lockfile
