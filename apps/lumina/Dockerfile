@@ -1,5 +1,5 @@
 # Base image
-FROM oven/bun:1.1 AS base
+FROM oven/bun:1.3.12 AS base
 WORKDIR /app
 
 # Stage 1: Pruner
