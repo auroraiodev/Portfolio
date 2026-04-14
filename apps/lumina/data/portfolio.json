@@ -64,6 +64,18 @@
         "GitHub Actions / CI/CD",
         "Git / Jira"
       ]
+    },
+    {
+      "category": "AI & MACHINE LEARNING",
+      "icon": "auto_awesome",
+      "tools": [
+        "LLMs (GPT, Llama, Claude)",
+        "Azure AI / OpenAI API",
+        "LangChain / RAG",
+        "Vector DBs (Pinecone, Chroma)",
+        "Semantic Search",
+        "Prompt Engineering"
+      ]
     }
   ],
   "chronicle": [

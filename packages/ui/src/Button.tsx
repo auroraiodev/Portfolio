@@ -6,18 +6,20 @@ import "./Button.css";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
 }
 
 export const Button = ({ 
   children, 
   variant = "primary", 
+  size = "md",
   className = "", 
   style,
   ...props 
 }: ButtonProps) => {
   return (
     <button 
-      className={`ui-button ui-button-${variant} ${className}`}
+      className={`ui-button ui-button-${variant} ui-button-${size} ${className}`}
       style={style}
       {...props}
     >

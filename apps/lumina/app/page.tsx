@@ -103,10 +103,10 @@ export default function Home() {
             <span style={{ color: "var(--accent-primary)" }}>•</span>  {profile.title.toUpperCase()} <span style={{ color: "var(--accent-primary)" }}>•</span>
           </motion.p>
           <motion.div variants={itemVariants} className="hero-actions" style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
-            <Button variant="primary" className="hero-btn" style={{ padding: "1.25rem 3rem" }} onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button variant="primary" size="lg" className="hero-btn" onClick={() => document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" })}>
               VIEW MY WORK
             </Button>
-            <Button variant="outline" className="hero-btn" style={{ padding: "1.25rem 3rem" }} onClick={() => window.open(profile.resume_url, "_blank")}>
+            <Button variant="outline" size="lg" className="hero-btn" onClick={() => window.open(profile.resume_url, "_blank")}>
               DOWNLOAD CV
             </Button>
           </motion.div>

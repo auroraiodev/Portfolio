@@ -10,6 +10,7 @@ export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const navItems = [
+    { label: "PROFILE", href: "/#home" },
     { label: "CHRONICLE", href: "/#chronicle" },
     { label: "ARSENAL", href: "/#arsenal" },
     { label: "RELICS", href: "/#relics" },
@@ -41,8 +42,8 @@ export const Navbar = () => {
         borderBottom: "1px solid rgba(229, 226, 225, 0.1)",
         boxShadow: "0 10px 30px rgba(0,0,0,0.8)"
       }}>
-        <Container size="lg" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <Container size="lg" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 2rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
             <span
               className="material-symbols-outlined visible-mobile"
               style={{ color: "var(--accent-primary)", cursor: "pointer" }}
@@ -52,40 +53,54 @@ export const Navbar = () => {
             </span>
             <Link href="/#home" onClick={(e) => handleScroll(e, "/#home")} style={{
               fontFamily: "'Noto Serif', serif",
-              fontSize: "1.25rem",
-              fontWeight: 700,
-              letterSpacing: "0.2em",
+              fontSize: "1.1rem",
+              fontWeight: 800,
+              letterSpacing: "0.25em",
               color: "var(--accent-primary)",
               textDecoration: "none",
-              textShadow: "0 0 8px rgba(233, 193, 118, 0.4)"
+              textShadow: "0 0 10px rgba(233, 193, 118, 0.3)"
             }}>
-              RESUME_01
+              AURORA<span style={{ opacity: 0.5 }}>.IO</span>
             </Link>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-            <div className="hidden-mobile" style={{ display: "flex", gap: "2rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "3rem" }}>
+            <div className="hidden-mobile" style={{ display: "flex", gap: "2.5rem" }}>
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.href)}
                   style={{
-                    fontFamily: "'Noto Serif', serif",
-                    fontSize: "0.8rem",
-                    letterSpacing: "0.2em",
+                    fontFamily: "'Manrope', sans-serif",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.15em",
                     textTransform: "uppercase",
                     textDecoration: "none",
-                    color: "rgba(229, 226, 225, 0.6)",
-                    transition: "all var(--transition-fast)",
+                    color: "rgba(255, 255, 255, 0.5)",
+                    transition: "all 0.3s ease",
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = "var(--accent-secondary)")}
-                  onMouseOut={(e) => (e.currentTarget.style.color = "rgba(229, 226, 225, 0.6)")}
+                  onMouseOver={(e) => (e.currentTarget.style.color = "var(--accent-primary)")}
+                  onMouseOut={(e) => (e.currentTarget.style.color = "rgba(255, 255, 255, 0.5)")}
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
+
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="hidden-mobile"
+              onClick={() => window.open("/resume.pdf", "_blank")}
+              style={{ 
+                border: "1px solid rgba(233, 193, 118, 0.3)",
+                color: "var(--accent-primary)",
+              }}
+            >
+              DOWNLOAD CV
+            </Button>
           </div>
         </Container>
       </nav>

@@ -13,13 +13,13 @@ export const Chronograph = () => {
           width: "30%", 
           backgroundColor: "var(--accent-secondary)", 
           boxShadow: "0 0 15px var(--accent-secondary)",
-          animation: "scan 4s linear infinite"
+          animation: "scan 12s linear infinite"
         }}></div>
       </div>
       <style jsx>{`
         @keyframes scan {
           0% { transform: translateX(-100%); }
-          100% { transform: translateX(400%); }
+          100% { transform: translateX(333%); }
         }
       `}</style>
     </section>
