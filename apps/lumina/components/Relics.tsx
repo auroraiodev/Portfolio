@@ -53,12 +53,15 @@ export const Relics = () => {
           >
             <AnimatePresence initial={false}>
               {relics.map((relic, index) => {
-                const distance = index - activeIndex;
+                // Circular distance logic
+                let distance = index - activeIndex;
+                if (distance > relics.length / 2) distance -= relics.length;
+                if (distance < -relics.length / 2) distance += relics.length;
+
                 const isActive = index === activeIndex;
                 
-                // Circular logic for seamless wrap-around if needed, 
-                // but simple index based focus for now
-                if (Math.abs(distance) > 2) return null;
+                // Show cards within view range
+                if (Math.abs(distance) > 2.5) return null;
 
                 return (
                   <motion.div
