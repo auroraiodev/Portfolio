@@ -1,110 +1,109 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export const AuraBackground = () => {
-  const [dots, setDots] = useState<{ id: number; x: number; y: number; tx: number; size: number; delay: number; duration: number }[]>([]);
-
-  useEffect(() => {
-    // Generate stable random particles
-    const newDots = Array.from({ length: 30 }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      tx: (Math.random() - 0.5) * 10, // Target x-offset
-      size: Math.random() * 2 + 1,
-      delay: Math.random() * 10,
-      duration: 10 + Math.random() * 15,
-    }));
-    setDots(newDots);
-  }, []);
-
   return (
-    <div style={{
-      position: "fixed",
-      inset: 0,
-      zIndex: -1,
-      pointerEvents: "none",
-      overflow: "hidden",
-      backgroundColor: "#080808",
-    }}>
-      {/* Soft Glow Orbs - Stable Background Layer */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.15, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: ["-10%", "10%", "-10%"],
-          y: ["-10%", "10%", "-10%"]
-        }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        style={{
-          position: "absolute",
-          top: "5%",
-          left: "15%",
-          width: "70vw",
-          height: "70vw",
-          background: "radial-gradient(circle, rgba(233, 193, 118, 0.06) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-      <motion.div 
-        animate={{ 
-          scale: [1.15, 1, 1.15],
-          opacity: [0.15, 0.35, 0.15],
-          x: ["10%", "-10%", "10%"],
-          y: ["10%", "-10%", "10%"]
-        }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        style={{
-          position: "absolute",
-          bottom: "5%",
-          right: "5%",
-          width: "60vw",
-          height: "60vw",
-          background: "radial-gradient(circle, rgba(154, 143, 128, 0.08) 0%, transparent 70%)",
-          filter: "blur(100px)",
-        }}
-      />
+    <div className="fog-container">
+      <div className="fogwrapper">
+        <div id="foglayer_01" className="fog">
+          <div className="image01"></div>
+          <div className="image02"></div>
+        </div>
+        <div id="foglayer_02" className="fog">
+          <div className="image01"></div>
+          <div className="image02"></div>
+        </div>
+        <div id="foglayer_03" className="fog">
+          <div className="image01"></div>
+          <div className="image02"></div>
+        </div>
+      </div>
 
-      {/* Floating Dust Particles - Optimized and Stable */}
-      {dots.map((dot) => (
-        <motion.div
-          key={dot.id}
-          initial={{ opacity: 0 }}
-          animate={{ 
-            opacity: [0, 0.3, 0],
-            y: ["0%", "-15%"],
-            x: ["0%", `${dot.tx}%`]
-          }}
-          transition={{ 
-            duration: dot.duration, 
-            repeat: Infinity, 
-            delay: dot.delay,
-            ease: "easeInOut"
-          }}
-          style={{
-            position: "absolute",
-            left: `${dot.x}%`,
-            top: `${dot.y}%`,
-            width: `${dot.size}px`,
-            height: `${dot.size}px`,
-            backgroundColor: "rgba(233, 193, 118, 0.4)",
-            borderRadius: "50%",
-            filter: "blur(0.5px)",
-            boxShadow: `0 0 4px rgba(233, 193, 118, 0.2)`,
-          }}
-        />
-      ))}
+      <style jsx>{`
+        .fog-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+          background-color: #000;
+          overflow: hidden;
+        }
 
-      {/* Grid Pattern Overlay */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        backgroundImage: `radial-gradient(rgba(154, 143, 128, 0.05) 1px, transparent 1px)`,
-        backgroundSize: "40px 40px",
-        opacity: 0.3
-      }} />
+        .fogwrapper {
+          height: 100%;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+        }
+
+        #foglayer_01, #foglayer_02, #foglayer_03 {
+          height: 100%;
+          position: absolute;
+          width: 200%;
+        }
+
+        .image01, .image02 {
+          float: left;
+          height: 100%;
+          width: 50%;
+        }
+
+        #foglayer_01 {
+          animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+        }
+        #foglayer_02, #foglayer_03 {
+          animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+        }
+
+        #foglayer_01 .image01, #foglayer_01 .image02 {
+          background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png") center center/cover no-repeat transparent;
+        }
+        #foglayer_02 .image01, #foglayer_02 .image02,
+        #foglayer_03 .image01, #foglayer_03 .image02 {
+          background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png") center center/cover no-repeat transparent;
+        }
+
+        @keyframes foglayer_01_opacity {
+          0% { opacity: .1; }
+          22% { opacity: .5; }
+          40% { opacity: .28; }
+          58% { opacity: .4; }
+          80% { opacity: .16; }
+          100% { opacity: .1; }
+        }
+
+        @keyframes foglayer_02_opacity {
+          0% { opacity: .5; }
+          25% { opacity: .2; }
+          50% { opacity: .1; }
+          80% { opacity: .3; }
+          100% { opacity: .5; }
+        }
+
+        @keyframes foglayer_03_opacity {
+          0% { opacity: .8; }
+          27% { opacity: .2; }
+          52% { opacity: .6; }
+          68% { opacity: .3; }
+          100% { opacity: .8; }
+        }
+
+        @keyframes foglayer_moveme {
+          0% { left: 0; }
+          100% { left: -100%; }
+        }
+
+        @media (max-width: 767px) {
+          .image01, .image02 {
+            width: 100%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

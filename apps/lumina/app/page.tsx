@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <main style={{ position: "relative", scrollBehavior: "smooth" }}>
-      <AuraBackground />
+      {/* <AuraBackground /> */}
       {/* Hero Section */}
       <header id="home" style={{
         position: "relative",
@@ -61,7 +61,7 @@ export default function Home() {
         justifyContent: "center",
         textAlign: "center",
         overflow: "hidden",
-        backgroundColor: "transparent"
+        backgroundColor: "#131313"
       }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           <img
@@ -162,7 +162,7 @@ export default function Home() {
       </header>
 
       {/* The Archivist's Vision */}
-      <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "transparent" }}>
+      <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "#0e0e0e" }}>
         <Container size="lg">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "5rem", alignItems: "center" }}>
             <motion.div
