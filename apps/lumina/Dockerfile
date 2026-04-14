@@ -37,8 +37,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 # Don't run production as root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN groupadd -r nodejs -g 1001 && useradd -r -g nodejs -u 1001 nextjs
 USER nextjs
 
 # Copy static assets and standalone build
