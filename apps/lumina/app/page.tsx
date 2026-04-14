@@ -96,26 +96,6 @@ export default function Home() {
             textShadow: "0 20px 40px rgba(0,0,0,0.4)",
             position: "relative"
           }}>
-            {/* The Magic Prism */}
-            <motion.div 
-               animate={{ 
-                 opacity: [0.3, 0.6, 0.3],
-                 rotate: [0, 360],
-               }}
-               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-               style={{ 
-                 position: "absolute", 
-                 top: "50%", 
-                 left: "50%", 
-                 transform: "translate(-50%, -50%)",
-                 width: "150%", 
-                 height: "150%", 
-                 background: "conic-gradient(from 0deg, transparent, rgba(233, 193, 118, 0.3), transparent, rgba(154, 143, 128, 0.3), transparent)",
-                 pointerEvents: "none",
-                 zIndex: -1,
-                 filter: "blur(60px)"
-               }}
-            />
             {profile.name.split(" ")[0]} <br /> <span style={{ color: "var(--accent-primary)", fontStyle: "italic" }}>{profile.name.split(" ")[1]}</span>
           </motion.h1>
           <motion.div variants={itemVariants} className="hero-divider" style={{ width: "100px", height: "1px", backgroundColor: "var(--accent-primary)", margin: "1.5rem auto", boxShadow: "0 0 10px var(--accent-primary)" }}></motion.div>
