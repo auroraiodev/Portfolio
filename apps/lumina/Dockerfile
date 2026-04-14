@@ -35,6 +35,8 @@ WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV=production
+ENV HOSTNAME="0.0.0.0"
+ENV PORT=3005
 
 # Don't run production as root
 RUN groupadd -r nodejs -g 1001 && useradd -r -g nodejs -u 1001 nextjs
