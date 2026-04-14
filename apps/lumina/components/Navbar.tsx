@@ -10,7 +10,8 @@ export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const navItems = [
-    { label: "PROFILE", href: "/#home" },
+    { label: "PROFILE", href: "#" },
+    { label: "IDENTITY", href: "/#vision" },
     { label: "CHRONICLE", href: "/#chronicle" },
     { label: "ARSENAL", href: "/#arsenal" },
     { label: "RELICS", href: "/#relics" },
@@ -60,7 +61,7 @@ export const Navbar = () => {
               textDecoration: "none",
               textShadow: "0 0 10px rgba(233, 193, 118, 0.3)"
             }}>
-              AURORA<span style={{ opacity: 0.5 }}>.IO</span>
+              RESUME<span style={{ opacity: 0.5 }}>_01</span>
             </Link>
           </div>
 
@@ -89,12 +90,12 @@ export const Navbar = () => {
               ))}
             </div>
 
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               className="hidden-mobile"
               onClick={() => window.open("/resume.pdf", "_blank")}
-              style={{ 
+              style={{
                 border: "1px solid rgba(233, 193, 118, 0.3)",
                 color: "var(--accent-primary)",
               }}

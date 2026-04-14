@@ -142,7 +142,7 @@ export default function Home() {
       </header>
 
       {/* The Archivist's Vision */}
-      <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "#0e0e0e" }}>
+      <section id="vision" style={{ padding: "10rem 2rem", backgroundColor: "#0e0e0e", position: "relative" }}>
         <Container size="lg">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "5rem", alignItems: "center" }}>
             <motion.div

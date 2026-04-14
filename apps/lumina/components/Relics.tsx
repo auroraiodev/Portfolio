@@ -9,13 +9,26 @@ export const Relics = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isGlitching, setIsGlitching] = useState(false);
   const { relics } = data;
 
-  const nextRelic = () => setActiveIndex((prev) => (prev + 1) % relics.length);
-  const prevRelic = () => setActiveIndex((prev) => (prev - 1 + relics.length) % relics.length);
+  const triggerGlitch = () => {
+    setIsGlitching(true);
+    setTimeout(() => setIsGlitching(false), 300);
+  };
+
+  const nextRelic = () => {
+    setActiveIndex((prev) => (prev + 1) % relics.length);
+    triggerGlitch();
+  };
+
+  const prevRelic = () => {
+    setActiveIndex((prev) => (prev - 1 + relics.length) % relics.length);
+    triggerGlitch();
+  };
 
   return (
-    <section id="relics" style={{ padding: "10rem 0", backgroundColor: "#0e0e0e", overflow: "hidden" }}>
+    <section id="relics" style={{ padding: "10rem 0", backgroundColor: "#0e0e0e", overflow: "hidden", position: "relative" }}>
       <Container size="xl">
         <motion.div 
           initial={{ opacity: 0 }}
@@ -89,14 +102,19 @@ export const Relics = () => {
                       if (info.offset.x > 100) prevRelic();
                       else if (info.offset.x < -100) nextRelic();
                     }}
-                    whileTap={isActive ? { cursor: "grabbing" } : {}}
+                    whileHover={!isActive ? { scale: 1.05, filter: "grayscale(0.5) blur(2px)", opacity: 0.8 } : {}}
+                    whileTap={isActive ? { cursor: "grabbing" } : { scale: 0.95 }}
                     layoutId={relic.id}
                     onClick={() => {
-                      if (isActive) setSelectedId(relic.id);
-                      else setActiveIndex(index);
+                      if (isActive) {
+                        setSelectedId(relic.id);
+                      } else {
+                        setActiveIndex(index);
+                        triggerGlitch();
+                      }
                     }}
                   >
-                    <div className="relic-card-premium" style={{ 
+                    <div className={`relic-card-premium ${isActive && isGlitching ? "data-glitch" : ""}`} style={{ 
                       aspectRatio: "9/16", 
                       backgroundColor: "#1a1a1a", 
                       overflow: "hidden", 
@@ -110,6 +128,9 @@ export const Relics = () => {
                         style={{ width: "100%", height: "100%", objectFit: "cover" }} 
                       />
                       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(14,14,14,1) 0%, rgba(14,14,14,0) 50%)" }} />
+                      
+                      {isActive && <div className="laser-line" />}
+                      {isActive && <div className="archival-grain" style={{ opacity: 0.1 }} />}
                       
                       <div style={{ position: "absolute", bottom: 0, left: 0, padding: "2.5rem", width: "100%", display: "flex", flexDirection: "column", gap: "0.5rem", alignItems: "flex-start", textAlign: "left" }}>
                         <motion.h4 
@@ -137,20 +158,28 @@ export const Relics = () => {
                           {relic.description}
                         </p>
 
-                        <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "flex-start", opacity: isActive ? 1 : 0, transition: "opacity 0.5s ease" }}>
-                          {relic.tech.map(t => (
-                            <span key={t} style={{ 
-                              fontSize: "8px", 
-                              backgroundColor: "rgba(233, 193, 118, 0.15)", 
-                              padding: "4px 10px", 
-                              color: "var(--accent-primary)", 
-                              borderRadius: "4px",
-                              border: "1px solid rgba(233, 193, 118, 0.2)",
-                              fontWeight: "500",
-                              letterSpacing: "0.05em"
-                            }} className="manrope">
+                        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "flex-start", opacity: isActive ? 1 : 0, transition: "opacity 0.5s ease" }}>
+                          {relic.tech.map((t, i) => (
+                            <motion.span 
+                              key={t} 
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={isActive ? { opacity: 1, x: 0 } : {}}
+                              transition={{ delay: 0.3 + i * 0.1 }}
+                              style={{ 
+                                fontSize: "10px", 
+                                backgroundColor: "rgba(233, 193, 118, 0.08)", 
+                                padding: "6px 12px", 
+                                color: "var(--accent-primary)", 
+                                borderRadius: "2px",
+                                border: "1px solid rgba(233, 193, 118, 0.2)",
+                                fontWeight: "bold",
+                                letterSpacing: "0.1em",
+                                textTransform: "uppercase",
+                                boxShadow: "0 0 15px rgba(233, 193, 118, 0.05)",
+                                textShadow: "0 0 8px rgba(233, 193, 118, 0.3)"
+                              }} className="manrope">
                               {t}
-                            </span>
+                            </motion.span>
                           ))}
                         </div>
                       </div>
@@ -329,45 +358,50 @@ export const Relics = () => {
             )}
           </AnimatePresence>
 
-          {/* Refined Navigation Controls */}
-          <div style={{ 
+          {/* Hardware Navigation Controls */}
+          <div className="hardware-controls" style={{ 
             position: "absolute", 
-            bottom: "-2rem", 
+            bottom: "-2.5rem", 
             display: "flex", 
-            gap: "2rem", 
+            gap: "0.5rem", 
             alignItems: "center",
-            padding: "1rem 2rem",
-            backgroundColor: "rgba(255, 255, 255, 0.03)",
-            backdropFilter: "blur(10px)",
-            borderRadius: "100px",
-            border: "1px solid rgba(154, 143, 128, 0.1)"
+            padding: "4px",
+            backgroundColor: "#0a0a0a",
+            borderRadius: "4px",
+            border: "1px solid rgba(233, 193, 118, 0.15)",
+            boxShadow: "inset 0 0 20px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.5)"
           }}>
             <button 
               onClick={prevRelic}
-              className="nav-btn"
-              style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", color: "rgba(255,255,255,0.4)", transition: "all 0.3s ease" }}
+              className="nav-btn-industrial"
+              style={{ padding: "0.75rem 1.5rem", background: "linear-gradient(to bottom, #1a1a1a, #0d0d0d)", color: "var(--accent-primary)", border: "1px solid rgba(233, 193, 118, 0.2)", borderRadius: "2px", cursor: "pointer", display: "flex", alignItems: "center" }}
             >
-              <span className="material-symbols-outlined" style={{ fontSize: "24px" }}>chevron_left</span>
+              <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>arrow_back_ios</span>
             </button>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-              <span className="manrope" style={{ fontSize: "12px", color: "white", letterSpacing: "0.1em" }}>0{activeIndex + 1}</span>
-              <div style={{ width: "20px", height: "1px", backgroundColor: "rgba(154, 143, 128, 0.3)" }} />
-              <span className="manrope" style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>0{relics.length}</span>
+            <div style={{ padding: "0.5rem 2rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "2px", borderLeft: "1px solid rgba(255,255,255,0.05)", borderRight: "1px solid rgba(255,255,255,0.05)" }}>
+              <span className="manrope" style={{ fontSize: "8px", color: "rgba(255,255,255,0.2)", letterSpacing: "0.2em" }}>SELECTION_ID</span>
+              <span className="manrope" style={{ fontSize: "14px", color: "white", fontWeight: "bold", letterSpacing: "0.1em" }}>0{activeIndex + 1} // 0{relics.length}</span>
             </div>
             <button 
               onClick={nextRelic}
-              className="nav-btn"
-              style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", color: "rgba(255,255,255,0.4)", transition: "all 0.3s ease" }}
+              className="nav-btn-industrial"
+              style={{ padding: "0.75rem 1.5rem", background: "linear-gradient(to bottom, #1a1a1a, #0d0d0d)", color: "var(--accent-primary)", border: "1px solid rgba(233, 193, 118, 0.2)", borderRadius: "2px", cursor: "pointer", display: "flex", alignItems: "center" }}
             >
-              <span className="material-symbols-outlined" style={{ fontSize: "24px" }}>chevron_right</span>
+              <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>arrow_forward_ios</span>
             </button>
           </div>
         </div>
       </Container>
 
       <style jsx>{`
-        .nav-btn:hover span {
-          color: white !important;
+        .nav-btn-industrial:hover {
+          background: linear-gradient(to bottom, #252525, #1a1a1a) !important;
+          border-color: var(--accent-primary) !important;
+          box-shadow: 0 0 15px rgba(233, 193, 118, 0.2);
+        }
+        .nav-btn-industrial:active {
+          transform: translateY(1px);
+          box-shadow: none;
         }
         .relic-card-premium {
           transition: all 0.5s ease;
@@ -390,6 +424,10 @@ export const Relics = () => {
           [style*="width: 350px"] {
             width: 85vw !important;
           }
+          .hardware-controls {
+            bottom: -3.5rem !important;
+            transform: scale(0.9);
+          }
         }
         .laser-line {
           position: absolute;
@@ -406,17 +444,28 @@ export const Relics = () => {
         .archival-grain {
           position: absolute;
           inset: 0;
-          background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-          opacity: 0.05;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+          opacity: 0.15;
           pointer-events: none;
           z-index: 5;
-          filter: contrast(150%) brightness(100%);
+          filter: contrast(150%) brightness(120%);
         }
         @keyframes scan-laser {
           0% { top: 0; opacity: 0; }
           10% { opacity: 0.5; }
           90% { opacity: 0.5; }
           100% { top: 100%; opacity: 0; }
+        }
+        .data-glitch {
+          animation: glitch-anim 0.2s ease infinite;
+        }
+        @keyframes glitch-anim {
+          0% { transform: translate(0); }
+          20% { transform: translate(-2px, 2px); }
+          40% { transform: translate(-2px, -2px); }
+          60% { transform: translate(2px, 2px); }
+          80% { transform: translate(2px, -2px); }
+          100% { transform: translate(0); }
         }
       `}</style>
     </section>

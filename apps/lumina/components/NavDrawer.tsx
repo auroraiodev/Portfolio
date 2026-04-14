@@ -53,15 +53,24 @@ export const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
           </div>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          <a href="#" style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--accent-primary)", background: "rgba(233, 193, 118, 0.1)", borderLeft: "2px solid var(--accent-primary)", padding: "1rem", textDecoration: "none" }} className="manrope">
-            <span className="material-symbols-outlined">explore</span> THE PATH
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+          <a href="#" onClick={(e) => { e.preventDefault(); document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }); onClose(); }} style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--accent-primary)", background: "rgba(233, 193, 118, 0.1)", borderLeft: "2px solid var(--accent-primary)", padding: "0.75rem 1rem", textDecoration: "none" }} className="manrope">
+            <span className="material-symbols-outlined" style={{ fontSize: "1.2rem" }}>explore</span> PROFILE
           </a>
-          <a href="#" style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "1rem", textDecoration: "none" }} className="manrope">
-            <span className="material-symbols-outlined">menu_book</span> KNOWLEDGE
+          <a href="#vision" onClick={(e) => { e.preventDefault(); document.getElementById("vision")?.scrollIntoView({ behavior: "smooth" }); onClose(); }} style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "0.75rem 1rem", textDecoration: "none" }} className="manrope">
+            <span className="material-symbols-outlined" style={{ fontSize: "1.2rem" }}>fingerprint</span> IDENTITY
           </a>
-          <a href="#" style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "1rem", textDecoration: "none" }} className="manrope">
-            <span className="material-symbols-outlined">category</span> ARTIFACTS
+          <a href="#chronicle" onClick={(e) => { e.preventDefault(); document.getElementById("chronicle")?.scrollIntoView({ behavior: "smooth" }); onClose(); }} style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "0.75rem 1rem", textDecoration: "none" }} className="manrope">
+            <span className="material-symbols-outlined" style={{ fontSize: "1.2rem" }}>history_edu</span> CHRONICLE
+          </a>
+          <a href="#arsenal" onClick={(e) => { e.preventDefault(); document.getElementById("arsenal")?.scrollIntoView({ behavior: "smooth" }); onClose(); }} style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "0.75rem 1rem", textDecoration: "none" }} className="manrope">
+            <span className="material-symbols-outlined" style={{ fontSize: "1.2rem" }}>terminal</span> ARSENAL
+          </a>
+          <a href="#relics" onClick={(e) => { e.preventDefault(); document.getElementById("relics")?.scrollIntoView({ behavior: "smooth" }); onClose(); }} style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "0.75rem 1rem", textDecoration: "none" }} className="manrope">
+            <span className="material-symbols-outlined" style={{ fontSize: "1.2rem" }}>inventory_2</span> RELICS
+          </a>
+          <a href="#signal" onClick={(e) => { e.preventDefault(); document.getElementById("signal")?.scrollIntoView({ behavior: "smooth" }); onClose(); }} style={{ display: "flex", alignItems: "center", gap: "1rem", color: "rgba(229, 226, 225, 0.4)", padding: "0.75rem 1rem", textDecoration: "none" }} className="manrope">
+            <span className="material-symbols-outlined" style={{ fontSize: "1.2rem" }}>sensors</span> SIGNAL
           </a>
         </div>
 

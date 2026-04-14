@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+// ARCHIVAL_SYNC_STABILITY_01
 
 export const BottomNav = () => {
   const [activeSegment, setActiveSegment] = useState("home");
 
   const navItems = [
+    { id: "home", label: "PROFILE", icon: "explore" },
+    { id: "vision", label: "IDENTITY", icon: "fingerprint" },
     { id: "chronicle", label: "CHRONICLE", icon: "auto_stories" },
     { id: "arsenal", label: "ARSENAL", icon: "terminal" },
     { id: "relics", label: "RELICS", icon: "inventory_2" },
