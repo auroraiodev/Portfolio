@@ -66,14 +66,14 @@
       ]
     },
     {
-      "category": "AI & MACHINE LEARNING",
+      "category": "AI",
       "icon": "auto_awesome",
       "tools": [
-        "LLMs (GPT, Llama, Claude)",
-        "Azure AI / OpenAI API",
-        "LangChain / RAG",
-        "Vector DBs (Pinecone, Chroma)",
-        "Semantic Search",
+        "Claude",
+        "Gemini (Antigravity)",
+        "Cursor",
+        "Ollama",
+        "Open WebUI",
         "Prompt Engineering"
       ]
     }
