@@ -19,11 +19,11 @@ export const Relics = () => {
     const updateSpacing = () => {
       const width = window.innerWidth;
       if (width <= 480) {
-        setCardSpacing(200);
+        setCardSpacing(160);
       } else if (width <= 768) {
-        setCardSpacing(260);
+        setCardSpacing(220);
       } else {
-        setCardSpacing(400);
+        setCardSpacing(280);
       }
     };
     updateSpacing();
@@ -171,14 +171,14 @@ export const Relics = () => {
                       x: distance * cardSpacing,
                     }}
                     animate={{
-                      opacity: isActive ? 1 : 0.3,
-                      scale: isActive ? 1 : 0.8,
+                      opacity: isActive ? 1 : 0.4,
+                      scale: isActive ? 1 : 0.85,
                       x: distance * cardSpacing,
-                      z: isActive ? 0 : -200,
-                      rotateY: distance * -25,
+                      z: isActive ? 0 : -350,
+                      rotateY: distance * -35,
                       filter: isActive
                         ? "grayscale(0) blur(0px)"
-                        : "grayscale(1) blur(4px)",
+                        : "grayscale(1) blur(2px)",
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className="relic-card-wrapper"
