@@ -53,6 +53,7 @@ export const Relics = () => {
         backgroundColor: "#0e0e0e",
         overflow: "hidden",
         position: "relative",
+        width: "100%",
       }}
     >
       <Container size="lg">
@@ -133,6 +134,7 @@ export const Relics = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            width: "100%",
           }}
         >
           <div
@@ -182,6 +184,8 @@ export const Relics = () => {
                     style={{
                       position: "absolute",
                       width: "350px",
+                      left: "50%",
+                      marginLeft: "-175px",
                       zIndex: isActive ? 10 : 5 - Math.abs(distance),
                       cursor: isActive ? "grab" : "pointer",
                     }}
@@ -862,6 +866,8 @@ export const Relics = () => {
             style={{
               position: "absolute",
               bottom: "-2.5rem",
+              left: "50%",
+              transform: "translateX(-50%)",
               display: "flex",
               gap: "0.5rem",
               alignItems: "center",
@@ -871,6 +877,7 @@ export const Relics = () => {
               border: "1px solid rgba(233, 193, 118, 0.15)",
               boxShadow:
                 "inset 0 0 20px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.5)",
+              zIndex: 20,
             }}
           >
             <button

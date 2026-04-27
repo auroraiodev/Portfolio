@@ -26,6 +26,7 @@ export const Signal = () => {
         backgroundColor: "#0e0e0e",
         position: "relative",
         overflow: "hidden",
+        width: "100%",
       }}
     >
       <div

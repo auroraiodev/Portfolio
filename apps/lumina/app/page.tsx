@@ -233,6 +233,7 @@ export default function Home() {
           padding: "10rem 2rem",
           backgroundColor: "#0e0e0e",
           position: "relative",
+          width: "100%",
         }}
       >
         <Container size="lg">

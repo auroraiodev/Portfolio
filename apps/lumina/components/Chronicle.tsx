@@ -27,6 +27,7 @@ export const Chronicle = () => {
         backgroundColor: "var(--bg-primary)",
         position: "relative",
         overflow: "hidden",
+        width: "100%",
       }}
     >
       <Container size="lg">

@@ -12,6 +12,7 @@ export const Chronograph = () => {
         alignItems: "center",
         backgroundColor: "var(--bg-primary)",
         position: "relative",
+        width: "100%",
       }}
     >
       <Container size="lg" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>

@@ -24,6 +24,7 @@ export const Arsenal = () => {
         backgroundColor: "#0b0b0b",
         position: "relative",
         overflow: "hidden",
+        width: "100%",
       }}
     >
       <Container size="lg">
