@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, ButtonHTMLAttributes, CSSProperties } from "react";
+import { ReactNode, ButtonHTMLAttributes } from "react";
 import "./Button.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -9,16 +9,16 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
 }
 
-export const Button = ({ 
-  children, 
-  variant = "primary", 
+export const Button = ({
+  children,
+  variant = "primary",
   size = "md",
-  className = "", 
+  className = "",
   style,
-  ...props 
+  ...props
 }: ButtonProps) => {
   return (
-    <button 
+    <button
       className={`ui-button ui-button-${variant} ui-button-${size} ${className}`}
       style={style}
       {...props}

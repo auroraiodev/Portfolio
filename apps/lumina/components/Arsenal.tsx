@@ -12,36 +12,70 @@ import data from "../data/portfolio.json";
  */
 export const Arsenal = () => {
   const { technical_coordinates } = data;
-  const [hoveredCategory, setHoveredCategory] = React.useState<string | null>(null);
+  const [hoveredCategory, setHoveredCategory] = React.useState<string | null>(
+    null,
+  );
 
   return (
-    <section id="arsenal" style={{ padding: "10rem 0", backgroundColor: "#0b0b0b", position: "relative", overflow: "hidden" }}>
+    <section
+      id="arsenal"
+      style={{
+        padding: "10rem 0",
+        backgroundColor: "#0b0b0b",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
       <Container size="lg">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           style={{ textAlign: "center", marginBottom: "5rem" }}
         >
-          <span className="manrope" style={{ color: "var(--accent-secondary)", fontSize: "10px", letterSpacing: "0.5em" }}>THE ARSENAL</span>
-          <h2 className="noto-serif" style={{ fontSize: "3.5rem", marginTop: "1rem" }}>Technical Matrix</h2>
-          <div style={{ width: "60px", height: "2px", background: "var(--accent-primary)", margin: "2rem auto", boxShadow: "0 0 15px var(--accent-primary)" }}></div>
+          <span
+            className="manrope"
+            style={{
+              color: "var(--accent-secondary)",
+              fontSize: "10px",
+              letterSpacing: "0.5em",
+            }}
+          >
+            THE ARSENAL
+          </span>
+          <h2
+            className="noto-serif"
+            style={{ fontSize: "3.5rem", marginTop: "1rem" }}
+          >
+            Technical Matrix
+          </h2>
+          <div
+            style={{
+              width: "60px",
+              height: "2px",
+              background: "var(--accent-primary)",
+              margin: "2rem auto",
+              boxShadow: "0 0 15px var(--accent-primary)",
+            }}
+          ></div>
         </motion.div>
-        
+
         <motion.div
-           initial={{ opacity: 0, scale: 0.98 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
-           transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           <Card className="master-arsenal-card">
             {/* Background UI Decorations */}
             <div className="card-bg-grid" />
             <div className="card-scanline" />
-            
+
             <div className="card-header-meta">
-              <span className="manrope">SYSTEM_READY // COORDINATES_LOCKED</span>
+              <span className="manrope">
+                SYSTEM_READY // COORDINATES_LOCKED
+              </span>
               <div className="meta-dots">
                 <span className="dot" />
                 <span className="dot" />
@@ -51,14 +85,16 @@ export const Arsenal = () => {
 
             <div className="internal-matrix">
               {technical_coordinates.map((item, index) => (
-                <div 
-                  key={item.category} 
-                  className={`matrix-quadrant ${hoveredCategory === item.category ? 'active' : ''}`}
+                <div
+                  key={item.category}
+                  className={`matrix-quadrant ${hoveredCategory === item.category ? "active" : ""}`}
                   onMouseEnter={() => setHoveredCategory(item.category)}
                   onMouseLeave={() => setHoveredCategory(null)}
                 >
                   <div className="quadrant-label">
-                    <span className="material-symbols-outlined quadrant-icon">{item.icon}</span>
+                    <span className="material-symbols-outlined quadrant-icon">
+                      {item.icon}
+                    </span>
                     <h3 className="quadrant-title">{item.category}</h3>
                   </div>
 
@@ -66,13 +102,18 @@ export const Arsenal = () => {
                     <ul className="master-tool-list">
                       {item.tools.map((tool, toolIndex) => (
                         <li key={tool} className="master-tool-item">
-                          <motion.span 
-                            animate={item.category.includes("AI") 
-                              ? { scale: [1, 1.8, 1], opacity: [0.4, 1, 0.4] }
-                              : { opacity: [0.4, 1, 0.4] }
+                          <motion.span
+                            animate={
+                              item.category.includes("AI")
+                                ? { scale: [1, 1.8, 1], opacity: [0.4, 1, 0.4] }
+                                : { opacity: [0.4, 1, 0.4] }
                             }
-                            transition={{ duration: 3, repeat: Infinity, delay: toolIndex * 0.2 }}
-                            className="master-tool-dot" 
+                            transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              delay: toolIndex * 0.2,
+                            }}
+                            className="master-tool-dot"
                           />
                           {tool}
                         </li>
@@ -81,7 +122,7 @@ export const Arsenal = () => {
                   </div>
 
                   {/* Corner Visual Identifier */}
-                  <div className="corner-tag">{`LOC_${(index + 1).toString().padStart(2, '0')}`}</div>
+                  <div className="corner-tag">{`LOC_${(index + 1).toString().padStart(2, "0")}`}</div>
                 </div>
               ))}
             </div>
@@ -103,15 +144,19 @@ export const Arsenal = () => {
           padding: 0 !important;
           border-radius: 8px;
           overflow: hidden;
-          box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
         }
 
         .card-bg-grid {
           position: absolute;
           inset: 0;
-          background-image: 
+          background-image:
             linear-gradient(rgba(233, 193, 118, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(233, 193, 118, 0.03) 1px, transparent 1px);
+            linear-gradient(
+              90deg,
+              rgba(233, 193, 118, 0.03) 1px,
+              transparent 1px
+            );
           background-size: 40px 40px;
           z-index: 0;
           pointer-events: none;
@@ -123,7 +168,12 @@ export const Arsenal = () => {
           left: 0;
           width: 100%;
           height: 2px;
-          background: linear-gradient(to right, transparent, var(--accent-primary), transparent);
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--accent-primary),
+            transparent
+          );
           opacity: 0.2;
           animation: scanline 10s linear infinite;
           z-index: 1;
@@ -131,10 +181,20 @@ export const Arsenal = () => {
         }
 
         @keyframes scanline {
-          0% { top: 0; opacity: 0; }
-          10% { opacity: 0.5; }
-          90% { opacity: 0.5; }
-          100% { top: 100%; opacity: 0; }
+          0% {
+            top: 0;
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.5;
+          }
+          90% {
+            opacity: 0.5;
+          }
+          100% {
+            top: 100%;
+            opacity: 0;
+          }
         }
 
         .card-header-meta {
@@ -185,7 +245,7 @@ export const Arsenal = () => {
           border-right: none;
         }
 
-        .matrix-quadrant:nth-last-child(-n+2) {
+        .matrix-quadrant:nth-last-child(-n + 2) {
           border-bottom: none;
         }
 
@@ -213,7 +273,7 @@ export const Arsenal = () => {
         }
 
         .quadrant-title {
-          font-family: 'Manrope', sans-serif;
+          font-family: "Manrope", sans-serif;
           font-size: 0.85rem;
           letter-spacing: 0.25em;
           color: var(--accent-primary);
@@ -234,7 +294,7 @@ export const Arsenal = () => {
           display: flex;
           align-items: center;
           gap: 1rem;
-          font-family: 'Manrope', sans-serif;
+          font-family: "Manrope", sans-serif;
           font-size: 1rem;
           color: var(--text-secondary);
           transition: color 0.3s ease;
@@ -256,7 +316,7 @@ export const Arsenal = () => {
           bottom: 1.5rem;
           right: 1.5rem;
           font-size: 8px;
-          font-family: 'Manrope', sans-serif;
+          font-family: "Manrope", sans-serif;
           color: rgba(233, 193, 118, 0.2);
           letter-spacing: 0.2em;
         }

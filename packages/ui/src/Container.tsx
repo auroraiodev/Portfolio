@@ -9,24 +9,24 @@ interface ContainerProps {
   size?: "sm" | "md" | "lg" | "xl" | "full";
 }
 
-export const Container = ({ 
-  children, 
-  className = "", 
+export const Container = ({
+  children,
+  className = "",
   style,
-  size = "lg" 
+  size = "lg",
 }: ContainerProps) => {
   const maxWidths = {
     sm: "640px",
     md: "768px",
     lg: "1024px",
     xl: "1280px",
-    full: "100%"
+    full: "100%",
   };
 
   return (
-    <div 
+    <div
       className={`ui-container ${className}`}
-      style={{ 
+      style={{
         maxWidth: maxWidths[size],
         marginLeft: "auto",
         marginRight: "auto",
@@ -34,7 +34,7 @@ export const Container = ({
         paddingRight: "1.5rem",
         width: "100%",
         boxSizing: "border-box",
-        ...style
+        ...style,
       }}
     >
       {children}

@@ -43,17 +43,19 @@ export const CustomCursor = () => {
         translateY: "-50%",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
       }}
       className="hidden-mobile"
     >
-      <div style={{
-        width: 4,
-        height: 4,
-        borderRadius: "50%",
-        backgroundColor: "var(--accent-secondary)",
-        boxShadow: "0 0 10px var(--accent-secondary)"
-      }}></div>
+      <div
+        style={{
+          width: 4,
+          height: 4,
+          borderRadius: "50%",
+          backgroundColor: "var(--accent-secondary)",
+          boxShadow: "0 0 10px var(--accent-secondary)",
+        }}
+      ></div>
     </motion.div>
   );
 };
