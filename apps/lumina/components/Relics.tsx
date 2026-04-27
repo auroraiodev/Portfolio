@@ -10,7 +10,24 @@ export const Relics = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isGlitching, setIsGlitching] = useState(false);
+  const [cardSpacing, setCardSpacing] = useState(400);
   const { relics } = data;
+
+  useEffect(() => {
+    const updateSpacing = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setCardSpacing(200);
+      } else if (width <= 768) {
+        setCardSpacing(260);
+      } else {
+        setCardSpacing(400);
+      }
+    };
+    updateSpacing();
+    window.addEventListener("resize", updateSpacing);
+    return () => window.removeEventListener("resize", updateSpacing);
+  }, []);
 
   const triggerGlitch = () => {
     setIsGlitching(true);
@@ -41,18 +58,18 @@ export const Relics = () => {
           <h2 className="noto-serif" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginTop: "1rem" }}>PROJECT RELICS</h2>
         </motion.div>
 
-        <div style={{ position: "relative", height: "700px", perspective: "1500px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          {/* Progress Indicator */}
-          <div style={{ position: "absolute", top: "-2rem", right: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
-             <div style={{ height: "1px", width: "100px", backgroundColor: "rgba(154, 143, 128, 0.2)", position: "relative" }}>
-                 <motion.div 
-                   animate={{ width: `${((activeIndex + 1) / relics.length) * 100}%` }}
-                   style={{ height: "100%", backgroundColor: "var(--accent-secondary)", position: "absolute", left: 0 }}
-                 />
-             </div>
-             <span className="manrope" style={{ fontSize: "10px", color: "var(--accent-secondary)" }}>0{activeIndex + 1} / 0{relics.length}</span>
-          </div>
+        {/* Progress Indicator - Above carousel for mobile centering */}
+        <div className="progress-indicator" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "2rem" }}>
+           <div className="progress-bar" style={{ height: "1px", width: "100px", backgroundColor: "rgba(154, 143, 128, 0.2)", position: "relative" }}>
+               <motion.div 
+                 animate={{ width: `${((activeIndex + 1) / relics.length) * 100}%` }}
+                 style={{ height: "100%", backgroundColor: "var(--accent-secondary)", position: "absolute", left: 0 }}
+               />
+           </div>
+           <span className="manrope" style={{ fontSize: "10px", color: "var(--accent-secondary)" }}>0{activeIndex + 1} / 0{relics.length}</span>
+        </div>
 
+        <div className="carousel-container" style={{ position: "relative", height: "700px", perspective: "1500px", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div 
             ref={containerRef}
             style={{ 
@@ -80,16 +97,17 @@ export const Relics = () => {
                 return (
                   <motion.div
                     key={relic.id}
-                    initial={{ opacity: 0, scale: 0.8, x: distance * 400 }}
+                    initial={{ opacity: 0, scale: 0.8, x: distance * cardSpacing }}
                     animate={{ 
                       opacity: isActive ? 1 : 0.3,
                       scale: isActive ? 1 : 0.8,
-                      x: distance * 400,
+                      x: distance * cardSpacing,
                       z: isActive ? 0 : -200,
                       rotateY: distance * -25,
                       filter: isActive ? "grayscale(0) blur(0px)" : "grayscale(1) blur(4px)",
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="relic-card-wrapper"
                     style={{ 
                       position: "absolute", 
                       width: "350px", 
@@ -458,40 +476,46 @@ export const Relics = () => {
             font-size: 2rem !important;
           }
           #relics > div > div:first-child {
-            margin-bottom: 3rem !important;
+            margin-bottom: 1.5rem !important;
           }
-          #relics > div > div[style*="height: 700px"] {
-            height: 500px !important;
+          .progress-indicator {
+            margin-bottom: 1rem !important;
+          }
+          .progress-bar {
+            width: 70px !important;
+          }
+          .carousel-container {
+            height: 450px !important;
             perspective: 800px !important;
           }
-          #relics > div > div[style*="height: 700px"] > div[style*="top: -2rem"] {
-            top: -1.5rem !important;
-            right: 1rem !important;
-          }
-          #relics > div > div[style*="height: 700px"] > div[style*="top: -2rem"] > div {
-            width: 60px !important;
+          .relic-card-wrapper {
+            width: 280px !important;
           }
           .hardware-controls {
-            bottom: -4rem !important;
+            bottom: -3rem !important;
             transform: scale(0.85);
           }
-          .relic-card-premium > div[style*="bottom: 0"] {
-            padding: 1.5rem !important;
+          .relic-card-premium > div:last-child {
+            padding: 1.25rem !important;
           }
           .relic-card-premium h4 {
-            font-size: 1.5rem !important;
+            font-size: 1.35rem !important;
           }
           .relic-card-premium p {
-            font-size: 0.75rem !important;
+            font-size: 0.7rem !important;
             max-width: 200px !important;
           }
         }
         @media (max-width: 480px) {
-          #relics > div > div[style*="height: 700px"] {
-            height: 450px !important;
+          .carousel-container {
+            height: 400px !important;
+          }
+          .relic-card-wrapper {
+            width: 240px !important;
           }
           .hardware-controls {
-            transform: scale(0.75);
+            transform: scale(0.7);
+            bottom: -2.5rem !important;
           }
         }
         .laser-line {
