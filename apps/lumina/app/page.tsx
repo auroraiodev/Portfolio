@@ -202,44 +202,76 @@ export default function Home() {
         }
         @media (max-width: 768px) {
           main {
-            padding-bottom: 80px;
+            padding-bottom: 100px;
+          }
+          .hero-content {
+            padding: 0 1rem !important;
+          }
+          .hero-meta {
+            font-size: 10px !important;
+            letter-spacing: 0.2em !important;
           }
           .hero-title {
+            font-size: clamp(2.8rem, 12vw, 5rem) !important;
             line-height: 1.0 !important;
             margin-bottom: 0.5rem;
             text-align: center;
           }
           .hero-subtitle {
-            letter-spacing: 0.2rem !important;
+            font-size: 0.7rem !important;
+            letter-spacing: 0.15em !important;
             line-height: 1.5;
-            padding: 0 1rem;
+            padding: 0 0.5rem;
             text-align: center;
           }
           .hero-divider {
+            width: 60px !important;
             margin: 1rem auto !important;
           }
           .hero-actions {
             flex-direction: column;
             gap: 1rem !important;
             width: 100%;
-            padding: 0 2rem;
+            padding: 0 1rem;
             align-items: center;
           }
           .hero-actions :global(.hero-btn) {
             width: 100%;
-            max-width: 300px;
-            padding: 1rem 2rem !important;
+            max-width: 280px;
+            padding: 0.875rem 1.5rem !important;
+            font-size: 0.75rem !important;
           }
           #vision {
-            padding: 5rem 1.5rem !important;
+            padding: 4rem 1rem !important;
           }
-          #vision .Container > div {
+          #vision > div > div {
             grid-template-columns: 1fr !important;
-            gap: 3rem !important;
-            text-align: center !important;
+            gap: 2.5rem !important;
+          }
+          #vision div[style*="aspectRatio"] {
+            max-width: 300px;
+            margin: 0 auto;
+          }
+          #vision div[style*="position: absolute"][style*="bottom: -32px"] {
+            display: none !important;
           }
           #vision div[style*="flex-direction: column"] {
+            text-align: center !important;
             align-items: center !important;
+          }
+          #vision div[style*="borderLeft: 4px"] {
+            border-left: none !important;
+            border-top: 4px solid var(--accent-primary) !important;
+            text-align: center !important;
+          }
+          #vision h3 {
+            font-size: 1.75rem !important;
+          }
+          #vision p {
+            font-size: 1rem !important;
+          }
+          .drop-cap::first-letter {
+            font-size: 3rem !important;
           }
         }
       `}</style>

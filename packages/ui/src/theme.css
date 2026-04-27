@@ -129,10 +129,34 @@ h1, h2, h3, h4, .noto-serif, .serif-text {
   .hidden-mobile {
     display: none !important;
   }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  .drop-cap::first-letter {
+    font-size: 3.5rem !important;
+    padding-right: 8px !important;
+  }
+  
+  .mono, .manrope {
+    letter-spacing: 0.15em;
+  }
+  
+  section {
+    overflow-x: hidden;
+  }
 }
 
 @media (min-width: 769px) {
   .visible-mobile {
     display: none !important;
+  }
+}
+
+/* Touch-friendly tap targets for mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
   }
 }

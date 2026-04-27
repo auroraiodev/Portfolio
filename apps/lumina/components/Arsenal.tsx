@@ -287,10 +287,20 @@ export const Arsenal = () => {
         }
 
         @media (max-width: 768px) {
+          #arsenal {
+            padding: 5rem 0 !important;
+          }
+          #arsenal h2 {
+            font-size: 2rem !important;
+          }
+          #arsenal > div > div:first-child {
+            margin-bottom: 3rem !important;
+          }
           .internal-matrix {
             grid-template-columns: 1fr;
           }
           .matrix-quadrant {
+            padding: 2rem 1.5rem !important;
             border-right: none !important;
           }
           .matrix-quadrant:nth-child(n) {
@@ -298,6 +308,37 @@ export const Arsenal = () => {
           }
           .matrix-quadrant:last-child {
             border-bottom: none;
+          }
+          .quadrant-label {
+            gap: 1rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          .quadrant-icon {
+            font-size: 1.5rem !important;
+          }
+          .quadrant-title {
+            font-size: 0.75rem !important;
+          }
+          .master-tool-list {
+            gap: 1rem !important;
+          }
+          .master-tool-item {
+            font-size: 0.9rem !important;
+          }
+          .card-header-meta,
+          .card-footer-meta {
+            padding: 0.75rem 1rem !important;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+          }
+          .card-header-meta span,
+          .card-footer-meta span {
+            font-size: 7px !important;
+          }
+          .corner-tag {
+            bottom: 1rem !important;
+            right: 1rem !important;
+            font-size: 7px !important;
           }
         }
       `}</style>

@@ -416,17 +416,82 @@ export const Relics = () => {
           .modal-img-gradient {
             background: linear-gradient(to bottom, transparent, #131313) !important;
           }
+          .modal-main-grid > div:first-child > div:first-child {
+            height: 300px !important;
+          }
+          .modal-main-grid > div:first-child > div:first-child h2 {
+            font-size: 2.5rem !important;
+          }
+          .modal-main-grid > div:first-child > div:last-child {
+            padding: 1.5rem !important;
+            gap: 1.5rem !important;
+            flex-wrap: wrap;
+          }
+          .modal-main-grid > div:last-child {
+            padding: 2rem 1.5rem !important;
+            gap: 2rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .modal-main-grid > div:first-child > div:first-child {
+            height: 250px !important;
+          }
+          .modal-main-grid > div:first-child > div:first-child h2 {
+            font-size: 2rem !important;
+          }
+          .modal-main-grid > div:first-child > div:first-child > div:last-child {
+            left: 1.5rem !important;
+            bottom: 1.5rem !important;
+          }
+          .close-btn {
+            top: 1rem !important;
+            right: 1rem !important;
+            width: 32px !important;
+            height: 32px !important;
+          }
         }
         @media (max-width: 768px) {
           #relics {
-            padding: 4rem 0 !important;
+            padding: 4rem 0 6rem 0 !important;
           }
-          [style*="width: 350px"] {
-            width: 85vw !important;
+          #relics h2 {
+            font-size: 2rem !important;
+          }
+          #relics > div > div:first-child {
+            margin-bottom: 3rem !important;
+          }
+          #relics > div > div[style*="height: 700px"] {
+            height: 500px !important;
+            perspective: 800px !important;
+          }
+          #relics > div > div[style*="height: 700px"] > div[style*="top: -2rem"] {
+            top: -1.5rem !important;
+            right: 1rem !important;
+          }
+          #relics > div > div[style*="height: 700px"] > div[style*="top: -2rem"] > div {
+            width: 60px !important;
           }
           .hardware-controls {
-            bottom: -3.5rem !important;
-            transform: scale(0.9);
+            bottom: -4rem !important;
+            transform: scale(0.85);
+          }
+          .relic-card-premium > div[style*="bottom: 0"] {
+            padding: 1.5rem !important;
+          }
+          .relic-card-premium h4 {
+            font-size: 1.5rem !important;
+          }
+          .relic-card-premium p {
+            font-size: 0.75rem !important;
+            max-width: 200px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          #relics > div > div[style*="height: 700px"] {
+            height: 450px !important;
+          }
+          .hardware-controls {
+            transform: scale(0.75);
           }
         }
         .laser-line {

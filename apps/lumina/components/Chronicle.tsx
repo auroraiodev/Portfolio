@@ -110,16 +110,31 @@ export const Chronicle = () => {
 
       <style jsx>{`
         @media (max-width: 768px) {
+          #chronicle {
+            padding: 5rem 0 3rem 0 !important;
+          }
+          #chronicle h2 {
+            font-size: 2rem !important;
+          }
+          #chronicle > div > div:first-child {
+            margin-bottom: 4rem !important;
+          }
           .chronicle-row {
             justify-content: center !important;
-            margin-bottom: 4rem !important;
+            margin-bottom: 3rem !important;
           }
           .chronicle-content {
             width: 100% !important;
             text-align: center !important;
-            padding: 0 1.5rem !important;
+            padding: 0 1rem !important;
             border-left: none !important;
             margin-left: 0 !important;
+          }
+          .chronicle-content h3 {
+            font-size: 1.35rem !important;
+          }
+          .chronicle-content p {
+            font-size: 0.85rem !important;
           }
         }
       `}</style>
