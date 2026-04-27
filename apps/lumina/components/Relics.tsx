@@ -21,9 +21,9 @@ export const Relics = () => {
       if (width <= 480) {
         setCardSpacing(160);
       } else if (width <= 768) {
-        setCardSpacing(220);
+        setCardSpacing(400);
       } else {
-        setCardSpacing(280);
+        setCardSpacing(600);
       }
     };
     updateSpacing();
@@ -51,7 +51,7 @@ export const Relics = () => {
       id="relics"
       style={{
         padding: "10rem 0",
-        backgroundColor: "#0e0e0e",
+        backgroundColor: "#050505",
         overflow: "hidden",
         position: "relative",
         width: "100%",
@@ -199,10 +199,10 @@ export const Relics = () => {
                     whileHover={
                       !isActive
                         ? {
-                            scale: 1.05,
-                            filter: "grayscale(0.5) blur(2px)",
-                            opacity: 0.8,
-                          }
+                          scale: 1.05,
+                          filter: "grayscale(0.5) blur(2px)",
+                          opacity: 0.8,
+                        }
                         : {}
                     }
                     whileTap={
@@ -235,14 +235,18 @@ export const Relics = () => {
                         src={relic.image}
                         alt={relic.title}
                         fill
-                        style={{ objectFit: "cover" }}
+                        style={{
+                          objectFit: "cover",
+                          opacity: isActive ? 0.6 : 1,
+                        }}
                       />
                       <div
                         style={{
                           position: "absolute",
                           inset: 0,
-                          background:
-                            "linear-gradient(to top, rgba(14,14,14,1) 0%, rgba(14,14,14,0) 50%)",
+                          background: isActive
+                            ? "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.5) 50%, rgba(5,5,5,0.2) 100%)"
+                            : "linear-gradient(to top, rgba(14,14,14,1) 0%, rgba(14,14,14,0) 50%)",
                         }}
                       />
 
@@ -273,12 +277,12 @@ export const Relics = () => {
                           animate={
                             isActive
                               ? {
-                                  backgroundImage: [
-                                    "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.4) 50%, #fff 100%)",
-                                    "linear-gradient(90deg, #fff 0%, rgba(255,255,255,1) 50%, #fff 100%)",
-                                    "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.4) 50%, #fff 100%)",
-                                  ],
-                                }
+                                backgroundImage: [
+                                  "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.4) 50%, #fff 100%)",
+                                  "linear-gradient(90deg, #fff 0%, rgba(255,255,255,1) 50%, #fff 100%)",
+                                  "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.4) 50%, #fff 100%)",
+                                ],
+                              }
                               : {}
                           }
                           transition={{ duration: 4, repeat: Infinity }}
