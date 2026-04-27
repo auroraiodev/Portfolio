@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@repo/ui/Container";
+import { Mail, Code, User } from "lucide-react";
 
 export const Signal = () => {
   const handleAction = (url: string) => {
@@ -9,11 +10,11 @@ export const Signal = () => {
   };
 
   const channels = [
-    { label: "EMAIL", icon: "mail", action: "mailto:darmfma@gmail.com" },
-    { label: "GITHUB", icon: "code", action: "https://github.com/DemisRincon" },
+    { label: "EMAIL", icon: <Mail size={24} />, action: "mailto:darmfma@gmail.com" },
+    { label: "GITHUB", icon: <Code size={24} />, action: "https://github.com/DemisRincon" },
     {
       label: "LINKEDIN",
-      icon: "person",
+      icon: <User size={24} />,
       action: "https://www.linkedin.com/in/demisrincon/",
     },
   ];
@@ -108,12 +109,11 @@ export const Signal = () => {
                   transition: "all 0.5s ease",
                 }}
               >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontSize: "1.5rem", color: "var(--accent-primary)" }}
+                <div
+                  style={{ color: "var(--accent-primary)" }}
                 >
                   {channel.icon}
-                </span>
+                </div>
               </div>
               <span
                 className="manrope"

@@ -5,6 +5,18 @@ import { motion } from "framer-motion";
 import { Container } from "@repo/ui/Container";
 import { Card } from "@repo/ui/Card";
 import data from "../data/portfolio.json";
+import { Terminal, Database, Wrench, Sparkles, Code, Cpu, Layout, Layers } from "lucide-react";
+
+const IconMap: Record<string, React.ReactNode> = {
+  terminal: <Terminal size={32} />,
+  database: <Database size={32} />,
+  settings_suggest: <Wrench size={32} />,
+  auto_awesome: <Sparkles size={32} />,
+  code: <Code size={32} />,
+  cpu: <Cpu size={32} />,
+  layout: <Layout size={32} />,
+  layers: <Layers size={32} />,
+};
 
 /**
  * Unified Technical Matrix Card
@@ -93,9 +105,9 @@ export const Arsenal = () => {
                   onMouseLeave={() => setHoveredCategory(null)}
                 >
                   <div className="quadrant-label">
-                    <span className="material-symbols-outlined quadrant-icon">
-                      {item.icon}
-                    </span>
+                    <div className="quadrant-icon">
+                      {IconMap[item.icon] || <Code size={32} />}
+                    </div>
                     <h3 className="quadrant-title">{item.category}</h3>
                   </div>
 

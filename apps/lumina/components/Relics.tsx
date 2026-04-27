@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@repo/ui/Container";
 import data from "../data/portfolio.json";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight, X, Shield, Database, Network } from "lucide-react";
 
 export const Relics = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -466,36 +467,30 @@ export const Relics = () => {
                         alignItems: "center",
                       }}
                     >
-                      <span
-                        className="material-symbols-outlined"
+                      <Shield
                         style={{
                           color: "var(--accent-primary)",
-                          fontSize: "20px",
+                          width: "20px",
+                          height: "20px",
                           opacity: 0.3,
                         }}
-                      >
-                        security
-                      </span>
-                      <span
-                        className="material-symbols-outlined"
+                      />
+                      <Database
                         style={{
                           color: "var(--accent-primary)",
-                          fontSize: "20px",
+                          width: "20px",
+                          height: "20px",
                           opacity: 0.3,
                         }}
-                      >
-                        database
-                      </span>
-                      <span
-                        className="material-symbols-outlined"
+                      />
+                      <Network
                         style={{
                           color: "var(--accent-primary)",
-                          fontSize: "20px",
+                          width: "20px",
+                          height: "20px",
                           opacity: 0.3,
                         }}
-                      >
-                        hub
-                      </span>
+                      />
                     </div>
                     <div
                       style={{
@@ -848,12 +843,7 @@ export const Relics = () => {
                     }}
                     className="close-btn"
                   >
-                    <span
-                      className="material-symbols-outlined"
-                      style={{ fontSize: "20px" }}
-                    >
-                      close
-                    </span>
+                    <X size={20} />
                   </button>
                 </motion.div>
               </div>
@@ -894,12 +884,7 @@ export const Relics = () => {
                 alignItems: "center",
               }}
             >
-              <span
-                className="material-symbols-outlined"
-                style={{ fontSize: "18px" }}
-              >
-                arrow_back_ios
-              </span>
+              <ChevronLeft size={18} />
             </button>
             <div
               style={{
@@ -948,12 +933,7 @@ export const Relics = () => {
                 alignItems: "center",
               }}
             >
-              <span
-                className="material-symbols-outlined"
-                style={{ fontSize: "18px" }}
-              >
-                arrow_forward_ios
-              </span>
+              <ChevronRight size={18} />
             </button>
           </div>
         </div>

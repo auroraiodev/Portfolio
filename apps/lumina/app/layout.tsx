@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CustomCursor } from "../components/CustomCursor";
 import { Noto_Serif, Manrope } from "next/font/google";
+import Head from "next/head";
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
@@ -32,6 +33,12 @@ export default function RootLayout({
       lang="en"
       className={`dark ${notoSerif.variable} ${manrope.variable}`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+      </head>
       <body>
         <div className="grain-overlay"></div>
         <CustomCursor />

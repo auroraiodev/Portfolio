@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Container } from "@repo/ui/Container";
 import { Button } from "@repo/ui/Button";
 import { NavDrawer } from "./NavDrawer";
+import { Menu } from "lucide-react";
 
 export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -58,13 +59,11 @@ export const Navbar = () => {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-            <span
-              className="material-symbols-outlined visible-mobile"
+            <Menu
+              className="visible-mobile"
               style={{ color: "var(--accent-primary)", cursor: "pointer" }}
               onClick={() => setIsDrawerOpen(true)}
-            >
-              menu
-            </span>
+            />
             <Link
               href="/#home"
               onClick={(e) => handleScroll(e, "/#home")}
