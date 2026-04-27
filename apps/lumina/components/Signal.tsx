@@ -41,7 +41,7 @@ export const Signal = () => {
       ></div>
 
       <Container
-        size="md"
+        size="lg"
         style={{ textAlign: "center", position: "relative", zIndex: 10 }}
       >
         <motion.div

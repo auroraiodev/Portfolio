@@ -55,7 +55,7 @@ export const Relics = () => {
         position: "relative",
       }}
     >
-      <Container size="xl">
+      <Container size="lg">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

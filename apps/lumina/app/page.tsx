@@ -95,7 +95,7 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
-            maxWidth: "1200px",
+            maxWidth: "1024px",
             padding: "0 1.5rem",
             margin: "0 auto",
           }}
