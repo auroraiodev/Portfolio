@@ -41,12 +41,11 @@ export default function Home() {
     <main
       style={{
         position: "relative",
-        scrollBehavior: "smooth",
         width: "100%",
-        margin: "0 auto",
+        overflowX: "hidden",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "stretch",
       }}
     >
       {/* <AuraBackground /> */}
@@ -66,7 +65,7 @@ export default function Home() {
           backgroundColor: "#131313",
         }}
       >
-        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, width: "100%", height: "100%" }}>
           <Image
             alt="Cinematic digital architect"
             fill
@@ -80,7 +79,7 @@ export default function Home() {
           />
           <div
             className="hero-gradient"
-            style={{ position: "absolute", inset: 0 }}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
           ></div>
         </div>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@repo/ui/theme.css";
+import "./globals.css";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CustomCursor } from "../components/CustomCursor";
@@ -32,6 +32,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`dark ${notoSerif.variable} ${manrope.variable}`}
+
     >
       <head>
         <link

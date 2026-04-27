@@ -68,6 +68,9 @@ export const Navbar = () => {
               href="/#home"
               onClick={(e) => handleScroll(e, "/#home")}
               style={{
+                display: "flex",
+                alignItems: "center",
+                lineHeight: 1,
                 fontFamily: "'Noto Serif', serif",
                 fontSize: "1.1rem",
                 fontWeight: 800,
