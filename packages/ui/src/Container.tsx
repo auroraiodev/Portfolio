@@ -28,9 +28,12 @@ export const Container = ({
       className={`ui-container ${className}`}
       style={{ 
         maxWidth: maxWidths[size],
-        margin: "0 auto",
-        padding: "0 1.5rem",
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingLeft: "1.5rem",
+        paddingRight: "1.5rem",
         width: "100%",
+        boxSizing: "border-box",
         ...style
       }}
     >
