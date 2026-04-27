@@ -89,14 +89,27 @@ export const Signal = () => {
         }
         @media (max-width: 768px) {
           #signal {
-            padding: 8rem 0 6rem 0 !important;
+            padding: 6rem 0 8rem 0 !important;
+          }
+          #signal h2 {
+            font-size: 2.5rem !important;
+            margin-bottom: 1rem !important;
+          }
+          #signal p {
+            font-size: 0.95rem !important;
+            padding: 0 1rem;
+            margin-bottom: 2.5rem !important;
           }
           .signal-channels {
-            gap: 1.5rem !important;
+            gap: 2rem !important;
+            flex-wrap: wrap;
           }
           .signal-icon {
-            width: 48px !important;
-            height: 48px !important;
+            width: 52px !important;
+            height: 52px !important;
+          }
+          .signal-icon span {
+            font-size: 1.25rem !important;
           }
         }
       `}</style>

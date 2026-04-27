@@ -33,12 +33,12 @@ export const BottomNav = () => {
       display: "flex", 
       justifyContent: "space-around", 
       alignItems: "center", 
-      padding: "0.75rem 1rem env(safe-area-inset-bottom)", 
-      backgroundColor: "rgba(28, 27, 27, 0.9)", 
-      backdropFilter: "blur(12px)", 
-      borderTop: "1px solid rgba(233, 193, 118, 0.1)", 
-      borderRadius: "1.5rem 1.5rem 0 0",
-      boxShadow: "0 -20px 40px rgba(0,0,0,0.6)"
+      padding: "0.625rem 0.5rem calc(0.625rem + env(safe-area-inset-bottom))", 
+      backgroundColor: "rgba(19, 19, 19, 0.95)", 
+      backdropFilter: "blur(16px)", 
+      WebkitBackdropFilter: "blur(16px)",
+      borderTop: "1px solid rgba(233, 193, 118, 0.15)", 
+      boxShadow: "0 -10px 30px rgba(0,0,0,0.5)"
     }}>
       {navItems.map((item) => (
         <button 
@@ -51,14 +51,16 @@ export const BottomNav = () => {
             display: "flex", 
             flexDirection: "column", 
             alignItems: "center", 
-            gap: "0.25rem", 
+            gap: "0.125rem", 
             cursor: "pointer",
             transition: "all var(--transition-normal)",
-            position: "relative"
+            position: "relative",
+            padding: "0.25rem",
+            minWidth: "48px"
           }}
         >
-          <span className="material-symbols-outlined" style={{ fontSize: "1.5rem" }}>{item.icon}</span>
-          <span className="manrope" style={{ fontSize: "8px", letterSpacing: "0.15em", fontWeight: 600 }}>{item.label}</span>
+          <span className="material-symbols-outlined" style={{ fontSize: "1.25rem" }}>{item.icon}</span>
+          <span className="manrope" style={{ fontSize: "7px", letterSpacing: "0.08em", fontWeight: 600 }}>{item.label}</span>
           {activeSegment === item.id && (
             <div style={{ 
               position: "absolute", 
